@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:drawing2cad:schema:0.1",
+  "title": "Drawing2CAD evidence document V0.1",
+  "type": "object",
+  "required": ["schema_version", "status", "source", "provenance", "configuration", "preprocessing", "texts", "geometry", "views", "dimensions", "parameters", "features", "units", "inferences", "unknowns", "warnings", "artifacts", "validation"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "status": {"enum": ["generated_with_assumptions", "needs_review", "error"]},
+    "source": {"type": "object", "required": ["path", "sha256", "page"], "properties": {"path": {"type": "string"}, "sha256": {"type": ["string", "null"]}, "page": {"type": "integer", "minimum": 1}}},
+    "provenance": {"type": "object", "required": ["pipeline_version", "created_utc", "confidence_note"]},
+    "configuration": {"type": "object"},
+    "preprocessing": {"type": "array", "items": {"type": "object"}},
+    "texts": {"type": "array", "items": {"type": "object", "required": ["id", "text", "bbox", "confidence", "source"], "properties": {"bbox": {"$ref": "#/$defs/bbox"}, "confidence": {"$ref": "#/$defs/confidence"}}}},
+    "geometry": {"type": "object", "properties": {"primitives": {"type": "array"}, "axis_lines": {"type": "array"}, "coordinate_system": {"type": "string"}}},
+    "views": {"type": "array", "items": {"type": "object", "required": ["id", "type", "bbox", "contour_ids", "hole_ids", "confidence"], "properties": {"bbox": {"$ref": "#/$defs/bbox"}, "confidence": {"$ref": "#/$defs/confidence"}}}},
+    "dimensions": {"type": "array", "items": {"type": "object", "required": ["id", "raw_text", "bbox", "source", "confidence", "value", "unit", "value_mm", "association", "status"], "properties": {"bbox": {"$ref": "#/$defs/bbox"}, "confidence": {"$ref": "#/$defs/confidence"}, "unit": {"type": ["string", "null"]}, "value_mm": {"type": ["number", "null"]}, "status": {"enum": ["recognized", "unknown"]}, "association": {"type": ["object", "null"]}}}},
+    "parameters": {"type": "object", "additionalProperties": {"$ref": "#/$defs/parameter"}},
+    "features": {"type": "object", "properties": {
+      "feature_definitions": {"type": "object", "properties": {
+        "hole": {"$ref": "#/$defs/through_hole"},
+        "slot": {"$ref": "#/$defs/straight_slot"}
+      }}
+    }},
+    "constraints": {"type": "array", "items": {"$ref": "#/$defs/dimension_chain"}},
+    "conflicts": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/dimension_chain"}, {"properties": {"status": {"const": "conflict"}}}]}},
+    "units": {"type": "object"},
+    "inferences": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "artifacts": {"type": "object", "additionalProperties": {"type": "string"}},
+    "validation": {"type": "object"}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "generated_with_assumptions"}}}, "then": {"required": ["recipe"], "properties": {"validation": {"required": ["valid_solid", "solid_count", "volume_mm3", "bounds_mm", "step_reimport_valid", "stl"]}}}},
+    {"if": {"properties": {"status": {"const": "needs_review"}}}, "then": {"required": ["blocking_reasons"]}},
+    {"if": {"properties": {"status": {"const": "error"}}}, "then": {"required": ["error"]}}
+  ],
+  "$defs": {
+    "through_hole": {
+      "type": "object",
+      "required": ["kind", "diameter_parameter", "extent", "extent_source", "additions"],
+      "properties": {
+        "kind": {"const": "cylindrical_through_hole"},
+        "diameter_parameter": {"type": "string"},
+        "extent": {"const": "through"},
+        "extent_source": {"type": "string"},
+        "additions": {"type": "array", "items": {
+          "type": "object", "required": ["kind", "diameter_parameter", "angle_parameter"],
+          "properties": {"kind": {"const": "countersink"}, "diameter_parameter": {"type": "string"}, "angle_parameter": {"type": "string"}}
+        }}
+      }
+    },
+    "straight_slot": {
+      "type": "object",
+      "required": ["kind", "extent", "extent_source", "inferred"],
+      "anyOf": [
+        {"required": ["width_parameter", "length_parameter"]},
+        {"required": ["parameter_scope"], "properties": {"parameter_scope": {"const": "per_feature"}}}
+      ],
+      "properties": {
+        "kind": {"const": "straight_slot"},
+        "width_parameter": {"type": "string"}, "length_parameter": {"type": "string"},
+        "parameter_scope": {"const": "per_feature"},
+        "extent": {"const": "through"}, "extent_source": {"type": "string"},
+        "inferred": {"type": "boolean"}
+      }
+    },
+    "dimension_chain": {
+      "type": "object",
+      "required": ["id", "status", "unit", "raw_values", "chain_parameters", "total_parameter", "direct_total", "chain_sum", "difference", "evidence", "policy"],
+      "properties": {
+        "status": {"enum": ["consistent", "conflict", "unknown"]},
+        "unit": {"type": "string"},
+        "raw_values": {"type": "array", "items": {"type": ["number", "null"]}},
+        "direct_total": {"type": ["number", "null"]},
+        "chain_sum": {"type": ["number", "null"]},
+        "difference": {"type": ["number", "null"]},
+        "evidence": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "geometry_evidence": {
+      "type": "object", "required": ["source", "calibration"],
+      "properties": {
+        "source": {"const": "detected"},
+        "calibration": {"type": "object", "required": ["method", "plate_bbox_px", "mm_per_pixel_x", "mm_per_pixel_y", "parameters", "assumption"]},
+        "geometry_id": {"type": "string"},
+        "geometry_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "detected_bbox_px": {"$ref": "#/$defs/bbox"},
+        "detected_coordinate_px": {"type": "number"}
+      },
+      "oneOf": [
+        {"required": ["geometry_id", "detected_bbox_px"]},
+        {"required": ["geometry_ids", "detected_coordinate_px"]}
+      ]
+    },
+    "bbox": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+    "parameter": {
+      "type": "object",
+      "required": ["status", "value_mm", "value_source", "nominal", "min", "max", "confidence", "inferred", "evidence", "dimension_ids", "limits_mm", "reason"],
+      "properties": {
+        "status": {"enum": ["known", "inferred", "unknown"]},
+        "source": {"enum": ["detected", "inferred", null]},
+        "value_mm": {"type": ["number", "null"]},
+        "value_degrees": {"type": ["number", "null"]},
+        "quantity": {"enum": ["length", "angle"]},
+        "value_source": {"type": ["string", "null"]},
+        "nominal": {"type": ["number", "null"]},
+        "min": {"type": ["number", "null"]},
+        "max": {"type": ["number", "null"]},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "inferred": {"type": "boolean"},
+        "evidence": {"type": "array", "items": {"oneOf": [
+          {"type": "object", "required": ["dimension_id", "raw_text", "source", "confidence", "value_mm", "bbox", "association"]},
+          {"$ref": "#/$defs/geometry_evidence"}
+        ]}},
+        "dimension_ids": {"type": "array", "items": {"type": "string"}},
+        "limits_mm": {"oneOf": [{"type": "null"}, {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}]},
+        "reason": {"type": ["string", "null"]}
+      },
+      "allOf": [{"if": {"properties": {"status": {"const": "unknown"}}}, "then": {"properties": {"value_mm": {"type": "null"}}}}]
+    }
+  }
+}

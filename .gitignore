@@ -1,0 +1,34 @@
+# Local interpreters and third-party binaries
+.venv*/
+venv/
+.video_dependencies/
+vendor/
+
+# Curated, portable evidence lives under examples/ and docs/
+/outputs/*
+!/outputs/.gitkeep
+/dist/
+/tmp/
+*.log
+
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Machine-local credentials and configuration
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+token*.json
+*.local.*

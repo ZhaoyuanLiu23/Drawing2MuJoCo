@@ -1,0 +1,713 @@
+{
+  "builder": "line_arc_profile_extrusion",
+  "unit": "mm",
+  "width_mm": 50.8,
+  "height_mm": 25.4,
+  "thickness_mm": 6.35,
+  "hole_x_mm": 25.4,
+  "hole_y_from_top_mm": 12.7,
+  "hole_diameter_mm": 12.7,
+  "corner_radius_mm": 6.35,
+  "corner_index": 2,
+  "datum": "CAD origin: front-view bottom-left; X right, Y up; Z through thickness.",
+  "hole_depth": "through",
+  "profile_edges": "four straight edges and one tangent quarter-circle",
+  "contains_inferred_dimensions": false,
+  "inferred_dimension_names": [],
+  "dimension_usage": {
+    "width": {
+      "used_value_mm": 50.8,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 50.8,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.9684051036682615,
+      "evidence": [
+        {
+          "dimension_id": "dimension_1",
+          "raw_text": "2.00",
+          "source": "ocr",
+          "confidence": 0.9998606294393539,
+          "value_mm": 50.8,
+          "tolerance_mm": null,
+          "bbox": [
+            405.0,
+            477.0,
+            489.0,
+            515.0
+          ],
+          "association": {
+            "parameter": "width",
+            "geometry_id": "geometry_3",
+            "axis": 0,
+            "span_px": 474.0,
+            "baseline_coordinate_px": 494.0,
+            "extension_line_ids": [
+              "axis_52",
+              "axis_72"
+            ],
+            "dimension_line_ids": [
+              "axis_8",
+              "axis_9"
+            ],
+            "confidence": 0.9684051036682615,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false
+          }
+        }
+      ]
+    },
+    "height": {
+      "used_value_mm": 25.4,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 25.4,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.9692424242424242,
+      "evidence": [
+        {
+          "dimension_id": "dimension_4",
+          "raw_text": "1.00",
+          "source": "ocr",
+          "confidence": 0.9998911768198013,
+          "value_mm": 25.4,
+          "tolerance_mm": null,
+          "bbox": [
+            58.0,
+            699.0,
+            143.0,
+            739.0
+          ],
+          "association": {
+            "parameter": "height",
+            "geometry_id": "geometry_3",
+            "axis": 1,
+            "span_px": 223.0,
+            "baseline_coordinate_px": 99.5,
+            "extension_line_ids": [
+              "axis_17",
+              "axis_41"
+            ],
+            "dimension_line_ids": [
+              "axis_49",
+              "axis_48"
+            ],
+            "confidence": 0.9692424242424242,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false
+          }
+        }
+      ]
+    },
+    "thickness": {
+      "used_value_mm": 6.35,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 6.35,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.9688344988344988,
+      "evidence": [
+        {
+          "dimension_id": "dimension_2",
+          "raw_text": "0.25",
+          "source": "ocr",
+          "confidence": 0.9999191761016846,
+          "value_mm": 6.35,
+          "tolerance_mm": null,
+          "bbox": [
+            844.0,
+            515.0,
+            928.0,
+            554.0
+          ],
+          "association": {
+            "parameter": "thickness",
+            "geometry_id": "geometry_2",
+            "axis": 0,
+            "span_px": 60.0,
+            "baseline_coordinate_px": 533.0,
+            "extension_line_ids": [
+              "axis_79",
+              "axis_83"
+            ],
+            "dimension_line_ids": [
+              "axis_11",
+              "axis_10"
+            ],
+            "confidence": 0.9688344988344988,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false
+          }
+        }
+      ]
+    },
+    "hole_x": {
+      "used_value_mm": 25.4,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 25.4,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.9695791245791245,
+      "evidence": [
+        {
+          "dimension_id": "dimension_0",
+          "raw_text": "1.00",
+          "source": "ocr",
+          "confidence": 0.999740868806839,
+          "value_mm": 25.4,
+          "tolerance_mm": null,
+          "bbox": [
+            270.0,
+            405.0,
+            355.0,
+            441.0
+          ],
+          "association": {
+            "parameter": "hole_x",
+            "geometry_id": "geometry_0",
+            "axis": 0,
+            "span_px": 233.5,
+            "baseline_coordinate_px": 423.5,
+            "extension_line_ids": [
+              "axis_51",
+              "axis_61"
+            ],
+            "dimension_line_ids": [
+              "axis_6",
+              "axis_7"
+            ],
+            "confidence": 0.9695791245791245,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false,
+            "projection_view": "view_top"
+          }
+        }
+      ]
+    },
+    "hole_y_from_top": {
+      "used_value_mm": 12.7,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 12.7,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.9698006379585327,
+      "evidence": [
+        {
+          "dimension_id": "dimension_3",
+          "raw_text": "0.50",
+          "source": "ocr",
+          "confidence": 0.9999232590198517,
+          "value_mm": 12.7,
+          "tolerance_mm": null,
+          "bbox": [
+            821.0,
+            661.0,
+            904.0,
+            699.0
+          ],
+          "association": {
+            "parameter": "hole_y_from_top",
+            "geometry_id": "geometry_0",
+            "axis": 1,
+            "span_px": 112.5,
+            "baseline_coordinate_px": 862.25,
+            "extension_line_ids": [
+              "axis_18",
+              "axis_28"
+            ],
+            "dimension_line_ids": [
+              "axis_78",
+              "axis_77"
+            ],
+            "confidence": 0.9698006379585327,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false,
+            "projection_view": "view_side"
+          }
+        }
+      ]
+    },
+    "hole_diameter": {
+      "used_value_mm": 12.7,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 12.7,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.9591774891774891,
+      "evidence": [
+        {
+          "dimension_id": "dimension_5",
+          "raw_text": "0.50 THRU",
+          "source": "ocr",
+          "confidence": 0.9611616283655167,
+          "value_mm": 12.7,
+          "tolerance_mm": null,
+          "bbox": [
+            1154.0,
+            712.0,
+            1336.0,
+            761.0
+          ],
+          "association": {
+            "parameter": "hole_diameter",
+            "geometry_id": "geometry_0",
+            "axis": 1,
+            "span_px": 115.0755615234375,
+            "baseline_coordinate_px": 1227.5,
+            "extension_line_ids": [
+              "axis_23",
+              "axis_37"
+            ],
+            "dimension_line_ids": [
+              "axis_91",
+              "axis_92"
+            ],
+            "confidence": 0.9591774891774891,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false,
+            "projection_view": "view_side"
+          }
+        }
+      ]
+    },
+    "corner_radius": {
+      "used_value_mm": 6.35,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 6.35,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "dimension_id": "dimension_6",
+          "raw_text": "R0.25",
+          "source": "ocr",
+          "confidence": 0.9671724915504456,
+          "value_mm": 6.35,
+          "tolerance_mm": null,
+          "bbox": [
+            741.0,
+            917.0,
+            853.0,
+            959.0
+          ],
+          "association": {
+            "parameter": "corner_radius",
+            "geometry_id": "geometry_3",
+            "confidence": 0.92,
+            "method": "radius_prefix_and_connected_leader_to_arc",
+            "leader_segment_ids": [
+              "segment_159",
+              "segment_83"
+            ],
+            "arrowhead_gap_px": 24.753469319701757
+          }
+        }
+      ]
+    }
+  },
+  "parameter_evidence": {
+    "width": {
+      "status": "known",
+      "value_mm": 50.8,
+      "value_source": "drawing_nominal",
+      "nominal": 50.8,
+      "min": null,
+      "max": null,
+      "confidence": 0.9684051036682615,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_1",
+          "raw_text": "2.00",
+          "source": "ocr",
+          "confidence": 0.9998606294393539,
+          "value_mm": 50.8,
+          "tolerance_mm": null,
+          "bbox": [
+            405.0,
+            477.0,
+            489.0,
+            515.0
+          ],
+          "association": {
+            "parameter": "width",
+            "geometry_id": "geometry_3",
+            "axis": 0,
+            "span_px": 474.0,
+            "baseline_coordinate_px": 494.0,
+            "extension_line_ids": [
+              "axis_52",
+              "axis_72"
+            ],
+            "dimension_line_ids": [
+              "axis_8",
+              "axis_9"
+            ],
+            "confidence": 0.9684051036682615,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_1"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 50.8,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "height": {
+      "status": "known",
+      "value_mm": 25.4,
+      "value_source": "drawing_nominal",
+      "nominal": 25.4,
+      "min": null,
+      "max": null,
+      "confidence": 0.9692424242424242,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_4",
+          "raw_text": "1.00",
+          "source": "ocr",
+          "confidence": 0.9998911768198013,
+          "value_mm": 25.4,
+          "tolerance_mm": null,
+          "bbox": [
+            58.0,
+            699.0,
+            143.0,
+            739.0
+          ],
+          "association": {
+            "parameter": "height",
+            "geometry_id": "geometry_3",
+            "axis": 1,
+            "span_px": 223.0,
+            "baseline_coordinate_px": 99.5,
+            "extension_line_ids": [
+              "axis_17",
+              "axis_41"
+            ],
+            "dimension_line_ids": [
+              "axis_49",
+              "axis_48"
+            ],
+            "confidence": 0.9692424242424242,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_4"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 25.4,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "thickness": {
+      "status": "known",
+      "value_mm": 6.35,
+      "value_source": "drawing_nominal",
+      "nominal": 6.35,
+      "min": null,
+      "max": null,
+      "confidence": 0.9688344988344988,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_2",
+          "raw_text": "0.25",
+          "source": "ocr",
+          "confidence": 0.9999191761016846,
+          "value_mm": 6.35,
+          "tolerance_mm": null,
+          "bbox": [
+            844.0,
+            515.0,
+            928.0,
+            554.0
+          ],
+          "association": {
+            "parameter": "thickness",
+            "geometry_id": "geometry_2",
+            "axis": 0,
+            "span_px": 60.0,
+            "baseline_coordinate_px": 533.0,
+            "extension_line_ids": [
+              "axis_79",
+              "axis_83"
+            ],
+            "dimension_line_ids": [
+              "axis_11",
+              "axis_10"
+            ],
+            "confidence": 0.9688344988344988,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_2"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 6.35,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "hole_x": {
+      "status": "known",
+      "value_mm": 25.4,
+      "value_source": "drawing_nominal",
+      "nominal": 25.4,
+      "min": null,
+      "max": null,
+      "confidence": 0.9695791245791245,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_0",
+          "raw_text": "1.00",
+          "source": "ocr",
+          "confidence": 0.999740868806839,
+          "value_mm": 25.4,
+          "tolerance_mm": null,
+          "bbox": [
+            270.0,
+            405.0,
+            355.0,
+            441.0
+          ],
+          "association": {
+            "parameter": "hole_x",
+            "geometry_id": "geometry_0",
+            "axis": 0,
+            "span_px": 233.5,
+            "baseline_coordinate_px": 423.5,
+            "extension_line_ids": [
+              "axis_51",
+              "axis_61"
+            ],
+            "dimension_line_ids": [
+              "axis_6",
+              "axis_7"
+            ],
+            "confidence": 0.9695791245791245,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false,
+            "projection_view": "view_top"
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_0"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 25.4,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "hole_y_from_top": {
+      "status": "known",
+      "value_mm": 12.7,
+      "value_source": "drawing_nominal",
+      "nominal": 12.7,
+      "min": null,
+      "max": null,
+      "confidence": 0.9698006379585327,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_3",
+          "raw_text": "0.50",
+          "source": "ocr",
+          "confidence": 0.9999232590198517,
+          "value_mm": 12.7,
+          "tolerance_mm": null,
+          "bbox": [
+            821.0,
+            661.0,
+            904.0,
+            699.0
+          ],
+          "association": {
+            "parameter": "hole_y_from_top",
+            "geometry_id": "geometry_0",
+            "axis": 1,
+            "span_px": 112.5,
+            "baseline_coordinate_px": 862.25,
+            "extension_line_ids": [
+              "axis_18",
+              "axis_28"
+            ],
+            "dimension_line_ids": [
+              "axis_78",
+              "axis_77"
+            ],
+            "confidence": 0.9698006379585327,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false,
+            "projection_view": "view_side"
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_3"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 12.7,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "hole_diameter": {
+      "status": "known",
+      "value_mm": 12.7,
+      "value_source": "drawing_nominal",
+      "nominal": 12.7,
+      "min": null,
+      "max": null,
+      "confidence": 0.9591774891774891,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_5",
+          "raw_text": "0.50 THRU",
+          "source": "ocr",
+          "confidence": 0.9611616283655167,
+          "value_mm": 12.7,
+          "tolerance_mm": null,
+          "bbox": [
+            1154.0,
+            712.0,
+            1336.0,
+            761.0
+          ],
+          "association": {
+            "parameter": "hole_diameter",
+            "geometry_id": "geometry_0",
+            "axis": 1,
+            "span_px": 115.0755615234375,
+            "baseline_coordinate_px": 1227.5,
+            "extension_line_ids": [
+              "axis_23",
+              "axis_37"
+            ],
+            "dimension_line_ids": [
+              "axis_91",
+              "axis_92"
+            ],
+            "confidence": 0.9591774891774891,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": false,
+            "projection_view": "view_side"
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_5"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 12.7,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "corner_radius": {
+      "status": "known",
+      "value_mm": 6.35,
+      "value_source": "drawing_nominal",
+      "nominal": 6.35,
+      "min": null,
+      "max": null,
+      "confidence": 0.92,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_6",
+          "raw_text": "R0.25",
+          "source": "ocr",
+          "confidence": 0.9671724915504456,
+          "value_mm": 6.35,
+          "tolerance_mm": null,
+          "bbox": [
+            741.0,
+            917.0,
+            853.0,
+            959.0
+          ],
+          "association": {
+            "parameter": "corner_radius",
+            "geometry_id": "geometry_3",
+            "confidence": 0.92,
+            "method": "radius_prefix_and_connected_leader_to_arc",
+            "leader_segment_ids": [
+              "segment_159",
+              "segment_83"
+            ],
+            "arrowhead_gap_px": 24.753469319701757
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_6"
+      ],
+      "limits_mm": null,
+      "nominal_mm": 6.35,
+      "tolerance_mm": null,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    }
+  },
+  "constraints": [],
+  "conflicts": [],
+  "unit_provenance": {
+    "cad": "mm",
+    "stl": "unitless; coordinates are millimetres",
+    "default": "in",
+    "status": "known",
+    "default_source": "cli_override",
+    "detected": []
+  },
+  "assumptions": [
+    "Matched orthographic views describe one constant-thickness extrusion.",
+    "The detected corner arc is tangent to its two adjacent straight edges."
+  ]
+}

@@ -1,0 +1,103 @@
+<mujoco model="arm_ball_pick_and_place">
+  <!-- SI units. Four arm joints + two independently actuated fingers. -->
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast"
+          cone="elliptic" solver="Newton" iterations="80" impratio="5"/>
+  <visual>
+    <global offwidth="960" offheight="720"/>
+    <quality shadowsize="2048"/>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.7 0.7 0.7" specular="0.3 0.3 0.3"/>
+    <rgba haze="0.12 0.16 0.22 1"/>
+  </visual>
+  <statistic center="0.23 0 0.30" extent="1.2"/>
+  <default>
+    <joint damping="4" armature="0.015"/>
+    <geom friction="1.0 0.01 0.001" condim="4" solref="0.008 1" solimp="0.95 0.99 0.001"/>
+    <default class="arm">
+      <geom type="capsule" size="0.027" rgba="0.10 0.48 0.68 1"/>
+    </default>
+    <default class="finger">
+      <joint type="slide" range="0.020 0.070" damping="3" armature="0.002"/>
+      <geom type="box" size="0.024 0.008 0.024" mass="0.065" rgba="0.13 0.17 0.22 1"
+            friction="1.5 0.025 0.002" condim="6" priority="1"/>
+    </default>
+  </default>
+  <asset>
+    <texture name="checker" type="2d" builtin="checker" width="512" height="512"
+             rgb1="0.16 0.20 0.26" rgb2="0.20 0.24 0.30"/>
+    <material name="ground" texture="checker" texrepeat="6 6" reflectance="0.1"/>
+    <material name="metal" rgba="0.10 0.48 0.68 1" specular="0.5" shininess="0.65"/>
+    <material name="orange" rgba="1 0.35 0.06 1" specular="0.55" shininess="0.7"/>
+  </asset>
+  <worldbody>
+    <light pos="0 -1 2.5" dir="0 0.3 -1" diffuse="0.8 0.8 0.8"/>
+    <light pos="1 1 2" dir="-0.3 -0.3 -1" diffuse="0.5 0.5 0.5" castshadow="false"/>
+    <camera name="overview" pos="1.30 -1.50 1.13" xyaxes="0.817 0.576 0 -0.247 0.350 0.904"/>
+    <geom name="floor" type="plane" size="2 2 0.05" material="ground"/>
+    <geom name="table" type="box" pos="0.20 0 0.13" size="0.53 0.43 0.05" rgba="0.76 0.81 0.85 1"/>
+    <geom type="box" pos="-0.24 -0.34 0.04" size="0.035 0.035 0.04" rgba="0.22 0.27 0.33 1"/>
+    <geom type="box" pos="0.64 -0.34 0.04" size="0.035 0.035 0.04" rgba="0.22 0.27 0.33 1"/>
+    <geom type="box" pos="-0.24 0.34 0.04" size="0.035 0.035 0.04" rgba="0.22 0.27 0.33 1"/>
+    <geom type="box" pos="0.64 0.34 0.04" size="0.035 0.035 0.04" rgba="0.22 0.27 0.33 1"/>
+    <!-- Sites provide non-colliding visual markers and configurable target positions. -->
+    <site name="pick_marker" type="cylinder" pos="0.40 -0.14 0.181" size="0.065 0.0005" rgba="1 0.62 0.2 1"/>
+    <body name="tray" pos="0.36 0.22 0.18">
+      <geom name="tray_floor" type="box" pos="0 0 0.003" size="0.10 0.10 0.003" rgba="0.12 0.62 0.45 1"/>
+      <geom type="box" pos="0.10 0 0.013" size="0.005 0.105 0.013" rgba="0.07 0.38 0.29 1"/>
+      <geom type="box" pos="-0.10 0 0.013" size="0.005 0.105 0.013" rgba="0.07 0.38 0.29 1"/>
+      <geom type="box" pos="0 0.10 0.013" size="0.095 0.005 0.013" rgba="0.07 0.38 0.29 1"/>
+      <geom type="box" pos="0 -0.10 0.013" size="0.095 0.005 0.013" rgba="0.07 0.38 0.29 1"/>
+      <site name="place_target" pos="0 0 0.034" size="0.004" rgba="0.4 1 0.65 0.4"/>
+    </body>
+    <body name="base" pos="0 0 0.18">
+      <geom type="cylinder" pos="0 0 0.025" size="0.09 0.025" rgba="0.15 0.20 0.26 1"/>
+      <body name="turret" pos="0 0 0.05" gravcomp="1">
+        <joint name="yaw" type="hinge" axis="0 0 1" range="-2.8 2.8"/>
+        <geom type="cylinder" pos="0 0 0.07" size="0.055 0.07" mass="1.4" rgba="0.14 0.42 0.58 1"/>
+        <body name="upper_arm" pos="0 0 0.19" gravcomp="1">
+          <joint name="shoulder" type="hinge" axis="0 1 0" range="-2.4 1.3"/>
+          <geom type="cylinder" size="0.046 0.045" quat="0.707107 0.707107 0 0" mass="0.25" rgba="0.20 0.25 0.31 1"/>
+          <geom class="arm" fromto="0 0 0 0.30 0 0" mass="0.85" material="metal"/>
+          <body name="forearm" pos="0.30 0 0" gravcomp="1">
+            <joint name="elbow" type="hinge" axis="0 1 0" range="0.05 2.7"/>
+            <geom type="cylinder" size="0.038 0.037" quat="0.707107 0.707107 0 0" mass="0.16" rgba="0.20 0.25 0.31 1"/>
+            <geom class="arm" fromto="0 0 0 0.28 0 0" size="0.023" mass="0.6" material="metal"/>
+            <body name="hand" pos="0.28 0 0" gravcomp="1">
+              <joint name="wrist" type="hinge" axis="0 1 0" range="-2.7 2.7" damping="2"/>
+              <geom type="cylinder" size="0.032 0.028" quat="0.707107 0.707107 0 0" mass="0.12" rgba="0.20 0.25 0.31 1"/>
+              <geom name="palm" type="box" pos="0 0 -0.037" size="0.035 0.081 0.014" mass="0.16" rgba="0.80 0.84 0.87 1"/>
+              <site name="grip_center" pos="0 0 -0.11" size="0.004" rgba="1 0.3 0.1 0"/>
+              <body name="left_finger" pos="0 0 -0.11" gravcomp="1">
+                <joint name="finger_left" class="finger" axis="0 1 0"/>
+                <geom name="left_pad" class="finger"/>
+                <geom type="box" pos="0 0 0.037" size="0.015 0.008 0.022" mass="0.025" rgba="0.70 0.74 0.79 1"/>
+              </body>
+              <body name="right_finger" pos="0 0 -0.11" gravcomp="1">
+                <joint name="finger_right" class="finger" axis="0 -1 0"/>
+                <geom name="right_pad" class="finger"/>
+                <geom type="box" pos="0 0 0.037" size="0.015 0.008 0.022" mass="0.025" rgba="0.70 0.74 0.79 1"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="ball" pos="0.40 -0.14 0.208">
+      <freejoint name="ball_free"/>
+      <geom name="ball_geom" type="sphere" size="0.028" mass="0.045" material="orange" condim="6"/>
+    </body>
+  </worldbody>
+  <contact>
+    <!-- The wrist housing and forearm overlap at their shared mechanical joint. -->
+    <exclude body1="forearm" body2="left_finger"/>
+    <exclude body1="forearm" body2="right_finger"/>
+  </contact>
+  <actuator>
+    <position name="yaw_servo" joint="yaw" kp="600" kv="50" ctrlrange="-2.8 2.8" forcerange="-100 100"/>
+    <position name="shoulder_servo" joint="shoulder" kp="900" kv="65" ctrlrange="-2.4 1.3" forcerange="-120 120"/>
+    <position name="elbow_servo" joint="elbow" kp="700" kv="50" ctrlrange="0.05 2.7" forcerange="-100 100"/>
+    <position name="wrist_servo" joint="wrist" kp="400" kv="25" ctrlrange="-2.7 2.7" forcerange="-40 40"/>
+    <position name="left_servo" joint="finger_left" kp="500" kv="8" ctrlrange="0.020 0.070" forcerange="-12 12"/>
+    <position name="right_servo" joint="finger_right" kp="500" kv="8" ctrlrange="0.020 0.070" forcerange="-12 12"/>
+  </actuator>
+</mujoco>

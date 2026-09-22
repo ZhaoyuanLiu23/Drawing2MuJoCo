@@ -1,0 +1,5 @@
+# Separate from CadQuery. Matches the existing local physics test environment.
+mujoco==3.3.7
+numpy==2.0.2
+matplotlib==3.9.4
+Pillow==11.3.0

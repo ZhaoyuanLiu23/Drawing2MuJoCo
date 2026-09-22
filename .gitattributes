@@ -1,0 +1,15 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.stl binary
+*.step binary
+*.gif binary
+examples/**/result/* linguist-generated=true
+examples/plate/b2/* linguist-generated=true
+examples/plate/b3/* linguist-generated=true

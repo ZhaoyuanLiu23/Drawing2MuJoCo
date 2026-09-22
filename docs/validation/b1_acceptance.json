@@ -1,0 +1,175 @@
+{
+  "source": "<external>/95610A014_Nylon Plastic Washers.pdf",
+  "source_unchanged": true,
+  "source_sha256": "97865ba4c0ce65c888be9c5eb84221944656f9479f79bee1163ff47fe8d6b26e",
+  "annotation_scale": 1.5,
+  "changed_label_count": 4,
+  "cases": [
+    {
+      "case": "original_pdf",
+      "status": "passed",
+      "parameters_mm": {
+        "outer_diameter": 8.8,
+        "thickness": 0.8,
+        "inner_diameter": 4.4
+      },
+      "output": "outputs/slot_only_b1_regression/original_pdf",
+      "validation": {
+        "valid_solid": true,
+        "solid_count": 1,
+        "volume_mm3": 36.49274026409904,
+        "bounds_mm": [
+          8.8,
+          8.8,
+          0.8
+        ],
+        "step_reimport_valid": true,
+        "step_reimport_volume_mm3": 36.49274026409984,
+        "stl": {
+          "triangles": 2016,
+          "watertight": true,
+          "volume_mm3": 36.48895943515618,
+          "bounds_mm": [
+            8.800000190734863,
+            8.800000190734863,
+            0.800000011920929
+          ]
+        }
+      }
+    },
+    {
+      "case": "anonymous_filename",
+      "status": "passed",
+      "parameters_mm": {
+        "outer_diameter": 8.8,
+        "thickness": 0.8,
+        "inner_diameter": 4.4
+      },
+      "output": "outputs/slot_only_b1_regression/anonymous_filename",
+      "validation": {
+        "valid_solid": true,
+        "solid_count": 1,
+        "volume_mm3": 36.49274026409904,
+        "bounds_mm": [
+          8.8,
+          8.8,
+          0.8
+        ],
+        "step_reimport_valid": true,
+        "step_reimport_volume_mm3": 36.49274026409984,
+        "stl": {
+          "triangles": 2016,
+          "watertight": true,
+          "volume_mm3": 36.48895943515618,
+          "bounds_mm": [
+            8.800000190734863,
+            8.800000190734863,
+            0.800000011920929
+          ]
+        }
+      }
+    },
+    {
+      "case": "raster_png",
+      "status": "passed",
+      "parameters_mm": {
+        "outer_diameter": 8.8,
+        "thickness": 0.8,
+        "inner_diameter": 4.4
+      },
+      "output": "outputs/slot_only_b1_regression/raster_png",
+      "validation": {
+        "valid_solid": true,
+        "solid_count": 1,
+        "volume_mm3": 36.49274026409904,
+        "bounds_mm": [
+          8.8,
+          8.8,
+          0.8
+        ],
+        "step_reimport_valid": true,
+        "step_reimport_volume_mm3": 36.49274026409984,
+        "stl": {
+          "triangles": 2016,
+          "watertight": true,
+          "volume_mm3": 36.48895943515618,
+          "bounds_mm": [
+            8.800000190734863,
+            8.800000190734863,
+            0.800000011920929
+          ]
+        }
+      }
+    },
+    {
+      "case": "raster_jpg",
+      "status": "passed",
+      "parameters_mm": {
+        "outer_diameter": 8.8,
+        "thickness": 0.8,
+        "inner_diameter": 4.4
+      },
+      "output": "outputs/slot_only_b1_regression/raster_jpg",
+      "validation": {
+        "valid_solid": true,
+        "solid_count": 1,
+        "volume_mm3": 36.49274026409904,
+        "bounds_mm": [
+          8.8,
+          8.8,
+          0.8
+        ],
+        "step_reimport_valid": true,
+        "step_reimport_volume_mm3": 36.49274026409984,
+        "stl": {
+          "triangles": 2016,
+          "watertight": true,
+          "volume_mm3": 36.48895943515618,
+          "bounds_mm": [
+            8.800000190734863,
+            8.800000190734863,
+            0.800000011920929
+          ]
+        }
+      }
+    },
+    {
+      "case": "changed_annotations",
+      "status": "passed",
+      "parameters_mm": {
+        "outer_diameter": 13.2,
+        "thickness": 1.2000000000000002,
+        "inner_diameter": 6.6
+      },
+      "output": "outputs/slot_only_b1_regression/changed_annotations",
+      "validation": {
+        "valid_solid": true,
+        "solid_count": 1,
+        "volume_mm3": 123.16299839133424,
+        "bounds_mm": [
+          13.2,
+          13.2,
+          1.2000000000000002
+        ],
+        "step_reimport_valid": true,
+        "step_reimport_volume_mm3": 123.16299839133694,
+        "stl": {
+          "triangles": 2016,
+          "watertight": true,
+          "volume_mm3": 123.1502419736485,
+          "bounds_mm": [
+            13.199999809265137,
+            13.199999809265137,
+            1.2000000476837158
+          ]
+        }
+      }
+    },
+    {
+      "case": "strict_limits",
+      "status": "passed",
+      "observed": "needs_review"
+    }
+  ],
+  "note": "Expected variant values derive from source evidence multiplied by the test factor; no sample dimensions are built into the parser."
+}

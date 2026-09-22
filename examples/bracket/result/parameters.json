@@ -1,0 +1,1466 @@
+{
+  "builder": "rectangular_plate_feature_pattern",
+  "unit": "mm",
+  "width_mm": 100.0,
+  "height_mm": 25.0,
+  "thickness_mm": 6.0,
+  "slot_sizes_mm": [
+    [
+      24.83108108108108,
+      10.97972972972973
+    ],
+    [
+      24.83108108108108,
+      10.97972972972973
+    ]
+  ],
+  "hole_diameter_mm": null,
+  "hole_centres_mm": [],
+  "slot_centres_mm": [
+    [
+      25.25337837837838,
+      12.246621621621623
+    ],
+    [
+      75.25337837837837,
+      12.246621621621623
+    ]
+  ],
+  "mode": "inferred_geometry",
+  "feature_definitions": {
+    "slot": {
+      "kind": "straight_slot",
+      "parameter_scope": "per_feature",
+      "extent": "through",
+      "extent_source": "inferred_from_closed_internal_contour",
+      "inferred": true
+    }
+  },
+  "contains_inferred_dimensions": true,
+  "inferred_dimension_names": [
+    "slot_x_0",
+    "slot_x_1",
+    "slot_y_0",
+    "slot_feature_0_length",
+    "slot_feature_0_width",
+    "slot_feature_1_length",
+    "slot_feature_1_width"
+  ],
+  "dimension_usage": {
+    "plate_width": {
+      "used_value_mm": 100.0,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 100.0,
+      "min": 99.8,
+      "max": 100.2,
+      "inferred": false,
+      "confidence": 0.9694196727494041,
+      "evidence": [
+        {
+          "dimension_id": "dimension_1",
+          "raw_text": "100.00mm±0.20",
+          "source": "pdf_text",
+          "confidence": 1.0,
+          "value_mm": 100.0,
+          "tolerance_mm": 0.2,
+          "bbox": [
+            837.0211029052734,
+            688.9907836914062,
+            1053.4749603271484,
+            729.9407958984375
+          ],
+          "association": {
+            "parameter": "plate_width",
+            "geometry_id": "geometry_3",
+            "axis": 0,
+            "span_px": 592.0,
+            "baseline_coordinate_px": 710.2500152587891,
+            "extension_line_ids": [
+              "annotation_axis_429",
+              "annotation_axis_480"
+            ],
+            "dimension_line_ids": [
+              "annotation_axis_49",
+              "annotation_axis_48"
+            ],
+            "confidence": 0.9694196727494041,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": true
+          }
+        }
+      ]
+    },
+    "plate_height": {
+      "used_value_mm": 25.0,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 25.0,
+      "min": 24.8,
+      "max": 25.2,
+      "inferred": false,
+      "confidence": 0.9686976878371222,
+      "evidence": [
+        {
+          "dimension_id": "dimension_2",
+          "raw_text": "25.00mm±0.20",
+          "source": "pdf_text",
+          "confidence": 1.0,
+          "value_mm": 25.0,
+          "tolerance_mm": 0.2,
+          "bbox": [
+            393.8663864135742,
+            826.9670867919922,
+            593.6533737182617,
+            867.9170989990234
+          ],
+          "association": {
+            "parameter": "plate_height",
+            "geometry_id": "geometry_3",
+            "axis": 1,
+            "span_px": 148.0,
+            "baseline_coordinate_px": 492.0,
+            "extension_line_ids": [
+              "annotation_axis_62",
+              "annotation_axis_102"
+            ],
+            "dimension_line_ids": [
+              "annotation_axis_417",
+              "annotation_axis_416"
+            ],
+            "confidence": 0.9686976878371222,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": true
+          }
+        }
+      ]
+    },
+    "thickness": {
+      "used_value_mm": 6.0,
+      "value_source": "drawing_nominal",
+      "source": "detected",
+      "nominal": 6.0,
+      "min": 5.5,
+      "max": 6.5,
+      "inferred": false,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "dimension_id": "dimension_0",
+          "raw_text": "6.00mm±0.50",
+          "source": "pdf_text",
+          "confidence": 1.0,
+          "value_mm": 6.0,
+          "tolerance_mm": 0.5,
+          "bbox": [
+            1342.5325012207031,
+            416.6508102416992,
+            1525.6521606445312,
+            457.6007843017578
+          ],
+          "association": {
+            "parameter": "thickness",
+            "geometry_id": "geometry_16",
+            "axis": 1,
+            "span_px": 35.500030517578125,
+            "baseline_coordinate_px": 1310.7499694824219,
+            "extension_line_ids": [
+              "annotation_axis_4",
+              "annotation_axis_6"
+            ],
+            "dimension_line_ids": [
+              "annotation_axis_492",
+              "annotation_axis_491"
+            ],
+            "confidence": 0.93,
+            "method": "paired_extension_lines_with_connected_offset_label",
+            "dimension_chain": true,
+            "label_tail_line_id": "annotation_axis_18",
+            "original_text_bbox": [
+              1342.5325012207031,
+              416.6508102416992,
+              1525.6521606445312,
+              457.6007843017578
+            ]
+          }
+        }
+      ]
+    },
+    "slot_width": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_length": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_x_chain_0": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_x_chain_1": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_x_chain_2": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_y_chain_0": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_y_chain_1": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "countersink_diameter": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "countersink_angle": {
+      "used_value_mm": null,
+      "value_source": null,
+      "source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": false,
+      "confidence": 0.0,
+      "evidence": []
+    },
+    "slot_x_0": {
+      "used_value_mm": 25.25337837837838,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_ids": [
+            "geometry_18"
+          ],
+          "detected_coordinate_px": 796.5,
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    },
+    "slot_x_1": {
+      "used_value_mm": 75.25337837837837,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_ids": [
+            "geometry_17"
+          ],
+          "detected_coordinate_px": 1092.5,
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    },
+    "slot_y_0": {
+      "used_value_mm": 12.753378378378377,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_ids": [
+            "geometry_18",
+            "geometry_17"
+          ],
+          "detected_coordinate_px": 847.5,
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    },
+    "slot_feature_0_length": {
+      "used_value_mm": 24.83108108108108,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_id": "geometry_18",
+          "detected_bbox_px": [
+            723.0,
+            815.0,
+            870.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    },
+    "slot_feature_0_width": {
+      "used_value_mm": 10.97972972972973,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_id": "geometry_18",
+          "detected_bbox_px": [
+            723.0,
+            815.0,
+            870.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    },
+    "slot_feature_1_length": {
+      "used_value_mm": 24.83108108108108,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_id": "geometry_17",
+          "detected_bbox_px": [
+            1019.0,
+            815.0,
+            1166.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    },
+    "slot_feature_1_width": {
+      "used_value_mm": 10.97972972972973,
+      "value_source": "inferred_geometry",
+      "source": "inferred",
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "evidence": [
+        {
+          "geometry_id": "geometry_17",
+          "detected_bbox_px": [
+            1019.0,
+            815.0,
+            1166.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ]
+    }
+  },
+  "parameter_evidence": {
+    "plate_width": {
+      "status": "known",
+      "value_mm": 100.0,
+      "value_source": "drawing_nominal",
+      "nominal": 100.0,
+      "min": 99.8,
+      "max": 100.2,
+      "confidence": 0.9694196727494041,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_1",
+          "raw_text": "100.00mm±0.20",
+          "source": "pdf_text",
+          "confidence": 1.0,
+          "value_mm": 100.0,
+          "tolerance_mm": 0.2,
+          "bbox": [
+            837.0211029052734,
+            688.9907836914062,
+            1053.4749603271484,
+            729.9407958984375
+          ],
+          "association": {
+            "parameter": "plate_width",
+            "geometry_id": "geometry_3",
+            "axis": 0,
+            "span_px": 592.0,
+            "baseline_coordinate_px": 710.2500152587891,
+            "extension_line_ids": [
+              "annotation_axis_429",
+              "annotation_axis_480"
+            ],
+            "dimension_line_ids": [
+              "annotation_axis_49",
+              "annotation_axis_48"
+            ],
+            "confidence": 0.9694196727494041,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": true
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_1"
+      ],
+      "limits_mm": [
+        99.8,
+        100.2
+      ],
+      "nominal_mm": 100.0,
+      "tolerance_mm": 0.2,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "plate_height": {
+      "status": "known",
+      "value_mm": 25.0,
+      "value_source": "drawing_nominal",
+      "nominal": 25.0,
+      "min": 24.8,
+      "max": 25.2,
+      "confidence": 0.9686976878371222,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_2",
+          "raw_text": "25.00mm±0.20",
+          "source": "pdf_text",
+          "confidence": 1.0,
+          "value_mm": 25.0,
+          "tolerance_mm": 0.2,
+          "bbox": [
+            393.8663864135742,
+            826.9670867919922,
+            593.6533737182617,
+            867.9170989990234
+          ],
+          "association": {
+            "parameter": "plate_height",
+            "geometry_id": "geometry_3",
+            "axis": 1,
+            "span_px": 148.0,
+            "baseline_coordinate_px": 492.0,
+            "extension_line_ids": [
+              "annotation_axis_62",
+              "annotation_axis_102"
+            ],
+            "dimension_line_ids": [
+              "annotation_axis_417",
+              "annotation_axis_416"
+            ],
+            "confidence": 0.9686976878371222,
+            "method": "paired_extension_lines_and_common_dimension_baseline",
+            "dimension_chain": true
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_2"
+      ],
+      "limits_mm": [
+        24.8,
+        25.2
+      ],
+      "nominal_mm": 25.0,
+      "tolerance_mm": 0.2,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "thickness": {
+      "status": "known",
+      "value_mm": 6.0,
+      "value_source": "drawing_nominal",
+      "nominal": 6.0,
+      "min": 5.5,
+      "max": 6.5,
+      "confidence": 0.93,
+      "inferred": false,
+      "evidence": [
+        {
+          "dimension_id": "dimension_0",
+          "raw_text": "6.00mm±0.50",
+          "source": "pdf_text",
+          "confidence": 1.0,
+          "value_mm": 6.0,
+          "tolerance_mm": 0.5,
+          "bbox": [
+            1342.5325012207031,
+            416.6508102416992,
+            1525.6521606445312,
+            457.6007843017578
+          ],
+          "association": {
+            "parameter": "thickness",
+            "geometry_id": "geometry_16",
+            "axis": 1,
+            "span_px": 35.500030517578125,
+            "baseline_coordinate_px": 1310.7499694824219,
+            "extension_line_ids": [
+              "annotation_axis_4",
+              "annotation_axis_6"
+            ],
+            "dimension_line_ids": [
+              "annotation_axis_492",
+              "annotation_axis_491"
+            ],
+            "confidence": 0.93,
+            "method": "paired_extension_lines_with_connected_offset_label",
+            "dimension_chain": true,
+            "label_tail_line_id": "annotation_axis_18",
+            "original_text_bbox": [
+              1342.5325012207031,
+              416.6508102416992,
+              1525.6521606445312,
+              457.6007843017578
+            ]
+          }
+        }
+      ],
+      "dimension_ids": [
+        "dimension_0"
+      ],
+      "limits_mm": [
+        5.5,
+        6.5
+      ],
+      "nominal_mm": 6.0,
+      "tolerance_mm": 0.5,
+      "reason": null,
+      "method": "dimension_annotation",
+      "required_for_cad": true,
+      "source": "detected"
+    },
+    "slot_width": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_length": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_x_chain_0": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_x_chain_1": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_x_chain_2": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_y_chain_0": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_y_chain_1": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "countersink_diameter": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "countersink_angle": {
+      "status": "unknown",
+      "value_mm": null,
+      "value_source": null,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "confidence": 0.0,
+      "inferred": false,
+      "evidence": [],
+      "dimension_ids": [],
+      "limits_mm": null,
+      "nominal_mm": null,
+      "tolerance_mm": null,
+      "reason": "A reliable, explicitly scaled dimension is required.",
+      "required_for_cad": false,
+      "source": null
+    },
+    "slot_x_0": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 25.25337837837838,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_ids": [
+            "geometry_18"
+          ],
+          "detected_coordinate_px": 796.5,
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified.",
+      "resolution_status": "inferred_geometry",
+      "constraint_id": "slot_x_chain"
+    },
+    "slot_x_1": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 75.25337837837837,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_ids": [
+            "geometry_17"
+          ],
+          "detected_coordinate_px": 1092.5,
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified.",
+      "resolution_status": "inferred_geometry",
+      "constraint_id": "slot_x_chain"
+    },
+    "slot_y_0": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 12.753378378378377,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_ids": [
+            "geometry_18",
+            "geometry_17"
+          ],
+          "detected_coordinate_px": 847.5,
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified.",
+      "resolution_status": "inferred_geometry",
+      "constraint_id": "slot_y_chain"
+    },
+    "slot_feature_0_length": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 24.83108108108108,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_id": "geometry_18",
+          "detected_bbox_px": [
+            723.0,
+            815.0,
+            870.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified."
+    },
+    "slot_feature_0_width": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 10.97972972972973,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_id": "geometry_18",
+          "detected_bbox_px": [
+            723.0,
+            815.0,
+            870.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified."
+    },
+    "slot_feature_1_length": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 24.83108108108108,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_id": "geometry_17",
+          "detected_bbox_px": [
+            1019.0,
+            815.0,
+            1166.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified."
+    },
+    "slot_feature_1_width": {
+      "status": "inferred",
+      "source": "inferred",
+      "value_source": "inferred_geometry",
+      "value_mm": 10.97972972972973,
+      "nominal": null,
+      "min": null,
+      "max": null,
+      "nominal_mm": null,
+      "limits_mm": null,
+      "tolerance_mm": null,
+      "inferred": true,
+      "confidence": 0.55,
+      "unit": "mm",
+      "quantity": "length",
+      "evidence": [
+        {
+          "geometry_id": "geometry_17",
+          "detected_bbox_px": [
+            1019.0,
+            815.0,
+            1166.0,
+            880.0
+          ],
+          "source": "detected",
+          "calibration": {
+            "method": "front_view_extents_calibrated_by_annotated_plate_dimensions",
+            "plate_bbox_px": [
+              647.0,
+              772.0,
+              1239.0,
+              920.0
+            ],
+            "mm_per_pixel_x": 0.16891891891891891,
+            "mm_per_pixel_y": 0.16891891891891891,
+            "parameters": {
+              "plate_width": {
+                "value_mm": 100.0,
+                "dimension_ids": [
+                  "dimension_1"
+                ]
+              },
+              "plate_height": {
+                "value_mm": 25.0,
+                "dimension_ids": [
+                  "dimension_2"
+                ]
+              }
+            },
+            "assumption": "Unspecified geometry is drawn to scale in this orthographic view."
+          }
+        }
+      ],
+      "dimension_ids": [],
+      "required_for_cad": true,
+      "reason": "Estimated from detected orthographic geometry, calibrated by explicit plate dimensions; no nominal or tolerance is specified."
+    }
+  },
+  "constraints": [
+    {
+      "id": "slot_x_chain",
+      "kind": "dimension_chain",
+      "status": "unknown",
+      "unit": "unknown",
+      "raw_values": [
+        null,
+        null,
+        null
+      ],
+      "chain_parameters": [
+        "slot_x_chain_0",
+        "slot_x_chain_1",
+        "slot_x_chain_2"
+      ],
+      "total_parameter": "plate_width",
+      "direct_total": 100.0,
+      "chain_sum": null,
+      "difference": null,
+      "evidence": [
+        {
+          "parameter": "plate_width",
+          "dimension_ids": [
+            "dimension_1"
+          ],
+          "raw_annotations": [
+            "100.00mm±0.20"
+          ]
+        },
+        {
+          "parameter": "slot_x_chain_0",
+          "dimension_ids": [],
+          "raw_annotations": []
+        },
+        {
+          "parameter": "slot_x_chain_1",
+          "dimension_ids": [],
+          "raw_annotations": []
+        },
+        {
+          "parameter": "slot_x_chain_2",
+          "dimension_ids": [],
+          "raw_annotations": []
+        }
+      ],
+      "policy": "Preserve all annotations. Resolve only from an agreeing chain, one complete datum path, a geometry-disambiguated conflict, or an explicit centre-line constraint.",
+      "position_parameters": [
+        "slot_x_0",
+        "slot_x_1"
+      ]
+    },
+    {
+      "id": "slot_y_chain",
+      "kind": "dimension_chain",
+      "status": "unknown",
+      "unit": "unknown",
+      "raw_values": [
+        null,
+        null
+      ],
+      "chain_parameters": [
+        "slot_y_chain_0",
+        "slot_y_chain_1"
+      ],
+      "total_parameter": "plate_height",
+      "direct_total": 25.0,
+      "chain_sum": null,
+      "difference": null,
+      "evidence": [
+        {
+          "parameter": "plate_height",
+          "dimension_ids": [
+            "dimension_2"
+          ],
+          "raw_annotations": [
+            "25.00mm±0.20"
+          ]
+        },
+        {
+          "parameter": "slot_y_chain_0",
+          "dimension_ids": [],
+          "raw_annotations": []
+        },
+        {
+          "parameter": "slot_y_chain_1",
+          "dimension_ids": [],
+          "raw_annotations": []
+        }
+      ],
+      "policy": "Preserve all annotations. Resolve only from an agreeing chain, one complete datum path, a geometry-disambiguated conflict, or an explicit centre-line constraint.",
+      "position_parameters": [
+        "slot_y_0"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "unit_provenance": {
+    "cad": "mm",
+    "stl": "unitless; coordinates are millimetres",
+    "default": null,
+    "status": "known",
+    "default_source": null,
+    "detected": [
+      "mm"
+    ]
+  },
+  "assumptions": [
+    "Undimensioned slot sizes and unannotated locations are estimated from detected geometry using annotated plate scale; these are approximate, not specified nominal dimensions. Slots are interpreted as through cuts."
+  ]
+}

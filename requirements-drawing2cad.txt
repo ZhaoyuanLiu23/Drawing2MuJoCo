@@ -1,0 +1,11 @@
+# Independent environment; do not install into the Panda/MuJoCo environment.
+cadquery==2.5.2
+numpy==2.2.6
+opencv-python==4.11.0.86
+PyMuPDF==1.26.7
+rapidocr-onnxruntime==1.4.4
+onnxruntime==1.22.1
+matplotlib==3.10.3
+Pillow==11.2.1
+pytest==8.4.2
+reportlab==4.4.3

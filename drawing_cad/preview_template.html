@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drawing2CAD · 3D 检查</title><style>
+*{box-sizing:border-box}body{margin:0;background:#eef2f7;color:#163046;font:16px system-ui,"Microsoft YaHei",sans-serif}header{padding:24px 32px;background:#152c40;color:white}h1{font-size:23px;margin:0 0 10px}main{max-width:1200px;margin:24px auto;padding:0 20px}canvas{width:100%;height:62vh;min-height:340px;display:block;background:#fff;border-radius:12px;touch-action:none}button,a{display:inline-block;border:0;border-radius:6px;padding:10px 14px;background:#126488;color:white;cursor:pointer;text-decoration:none;margin:0 8px 12px 0}p{line-height:1.6}.notes{background:#fff6de;padding:14px;border-radius:8px;font-size:13px}#state{color:#496074;font-size:14px}
+</style><header><h1>Drawing2CAD · 参数化模型检查</h1><div>__DETAILS__</div></header><main>
+<button id="reset">重置视角</button><button id="top">顶视图</button><button id="side">侧视图</button>
+<a href="model.step" download>STEP</a><a href="model.stl" download>STL</a><a href="parsed.json">解析证据 JSON</a>
+<canvas id="view" aria-label="可旋转的三维 CAD 模型"></canvas><p id="state">拖动旋转，滚轮缩放。预览直接使用 CAD 内核的三角网格，长度单位为 mm。</p>
+<p class="notes">__NOTES__</p></main><script>
+"use strict";const mesh=__MESH__;
+const canvas=document.querySelector('#view'),ctx=canvas.getContext('2d');
+let yaw=-.8,pitch=.6,zoom=1,drag=null;
+const bounds=[0,1,2].map(k=>[Math.min(...mesh.vertices.map(v=>v[k])),Math.max(...mesh.vertices.map(v=>v[k]))]);
+const center=bounds.map(b=>(b[0]+b[1])/2),span=Math.max(...bounds.map(b=>b[1]-b[0]));
+function rotate(p){let x=p[0]-center[0],y=p[1]-center[1],z=p[2]-center[2];let u=Math.cos(yaw)*x-Math.sin(yaw)*y,v=Math.sin(yaw)*x+Math.cos(yaw)*y;return [u,Math.sin(pitch)*v-Math.cos(pitch)*z,Math.cos(pitch)*v+Math.sin(pitch)*z];}
+function draw(){const dpr=window.devicePixelRatio||1,w=canvas.clientWidth,h=canvas.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.scale(dpr,dpr);ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);let scale=Math.min(w,h)*.72/span*zoom;const v=mesh.vertices.map(rotate);let faces=mesh.triangles.map(t=>({t,depth:t.reduce((s,i)=>s+v[i][2],0)/3})).sort((a,b)=>a.depth-b.depth);
+for(const {t} of faces){let a=v[t[0]],b=v[t[1]],c=v[t[2]],u=b.map((q,k)=>q-a[k]),r=c.map((q,k)=>q-a[k]),n=[u[1]*r[2]-u[2]*r[1],u[2]*r[0]-u[0]*r[2],u[0]*r[1]-u[1]*r[0]],len=Math.hypot(...n)||1;let light=.45+.45*Math.abs((n[0]*.2-n[1]*.4+n[2]*.85)/len);ctx.fillStyle=`rgb(${Math.round(45*light)},${Math.round(163*light)},${Math.round(208*light)})`;ctx.beginPath();for(let j=0;j<3;j++){let p=v[t[j]],x=w/2+p[0]*scale,y=h/2+p[1]*scale;j?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.closePath();ctx.fill();ctx.strokeStyle=ctx.fillStyle;ctx.lineWidth=.35;ctx.stroke();}
+ctx.fillStyle='#36516a';ctx.font='13px system-ui';ctx.fillText(`${mesh.triangles.length} triangles · mm`,18,h-18);}
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch=Math.max(-1.57,Math.min(1.57,pitch+(e.clientY-drag[1])*.008));drag=[e.clientX,e.clientY];draw()});canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.3,Math.min(4,zoom*Math.exp(-e.deltaY*.001)));draw()},{passive:false});
+document.querySelector('#reset').onclick=()=>{yaw=-.8;pitch=.6;zoom=1;draw()};document.querySelector('#top').onclick=()=>{yaw=0;pitch=1.57;draw()};document.querySelector('#side').onclick=()=>{yaw=0;pitch=0;draw()};window.addEventListener('resize',draw);draw();
+</script></html>

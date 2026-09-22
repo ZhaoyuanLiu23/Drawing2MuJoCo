@@ -1,0 +1,118 @@
+[
+  {
+    "case": "washer",
+    "input": "examples/washer/input.pdf",
+    "input_sha256": "97865ba4c0ce65c888be9c5eb84221944656f9479f79bee1163ff47fe8d6b26e",
+    "result": "examples/washer/result",
+    "units_override": null,
+    "validation": {
+      "valid_solid": true,
+      "solid_count": 1,
+      "volume_mm3": 36.49274026409904,
+      "bounds_mm": [
+        8.8,
+        8.8,
+        0.8
+      ],
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 36.49274026409984,
+      "stl": {
+        "triangles": 2016,
+        "watertight": true,
+        "volume_mm3": 36.48895943515618,
+        "bounds_mm": [
+          8.800000190734863,
+          8.800000190734863,
+          0.800000011920929
+        ]
+      }
+    }
+  },
+  {
+    "case": "bracket",
+    "input": "examples/bracket/input.pdf",
+    "input_sha256": "85bc88104608caa3695e403999e6d6922c68e78a479ae3bd16ba7709da0ec74d",
+    "result": "examples/bracket/result",
+    "units_override": null,
+    "validation": {
+      "valid_solid": true,
+      "solid_count": 1,
+      "volume_mm3": 12038.791805028459,
+      "bounds_mm": [
+        100.0,
+        25.0,
+        6.0
+      ],
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 12038.791805028406,
+      "stl": {
+        "triangles": 2052,
+        "watertight": true,
+        "volume_mm3": 12038.909536931673,
+        "bounds_mm": [
+          100.0,
+          25.0,
+          6.0
+        ]
+      }
+    }
+  },
+  {
+    "case": "b2",
+    "input": "tests/drawing2cad/fixtures/benchmark2.png",
+    "input_sha256": "6cc50c55f2f48384732683676c9aecfe2940dbe32f59b47bbef96ee270a1c66f",
+    "result": "examples/plate/b2",
+    "units_override": "in",
+    "validation": {
+      "valid_solid": true,
+      "solid_count": 1,
+      "volume_mm3": 7334.18553269954,
+      "bounds_mm": [
+        50.8,
+        25.4,
+        6.35
+      ],
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 7334.185532699545,
+      "stl": {
+        "triangles": 1276,
+        "watertight": true,
+        "volume_mm3": 7334.247703891856,
+        "bounds_mm": [
+          50.79999923706055,
+          25.399999618530273,
+          6.349999904632568
+        ]
+      }
+    }
+  },
+  {
+    "case": "b3",
+    "input": "tests/drawing2cad/fixtures/benchmark3.png",
+    "input_sha256": "8d0e0b11ab602d836d3119daa1be492545653004007db50de8fc18186d5e8955",
+    "result": "examples/plate/b3",
+    "units_override": "mm",
+    "validation": {
+      "valid_solid": true,
+      "solid_count": 1,
+      "volume_mm3": 31079.222193037727,
+      "bounds_mm": [
+        176.8,
+        60.0,
+        3.2000000000000037
+      ],
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 31079.22219303765,
+      "stl": {
+        "triangles": 24260,
+        "watertight": true,
+        "volume_mm3": 31079.480938876684,
+        "bounds_mm": [
+          176.8000030517578,
+          60.0,
+          3.200000047683716
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,2 @@
+# CAD only. Keep robot simulation in its separate environment.
+-r requirements-drawing2cad.txt

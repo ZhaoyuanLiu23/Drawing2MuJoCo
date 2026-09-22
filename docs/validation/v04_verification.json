@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "sample": {
+    "source": {
+      "path": "<external>/2312N43_Flat-Surface Machine Bracket.pdf",
+      "sha256": "85bc88104608caa3695e403999e6d6922c68e78a479ae3bd16ba7709da0ec74d",
+      "page": 1,
+      "page_count": 1,
+      "processed_image_size": [
+        1980,
+        1530
+      ]
+    },
+    "output": "outputs/drawing2cad_slot_only/sample",
+    "status": "generated_with_assumptions",
+    "mode": "inferred_geometry",
+    "plate_dimensions_mm": [
+      100.0,
+      25.0,
+      6.0
+    ],
+    "slot_sizes_mm": [
+      [
+        24.83108108108108,
+        10.97972972972973
+      ],
+      [
+        24.83108108108108,
+        10.97972972972973
+      ]
+    ],
+    "slot_centres_mm": [
+      [
+        25.25337837837838,
+        12.246621621621623
+      ],
+      [
+        75.25337837837837,
+        12.246621621621623
+      ]
+    ],
+    "note": "Slot sizes, unannotated positions and through-cut interpretation are inferred, not manufacturing specifications.",
+    "validation": {
+      "valid_solid": true,
+      "solid_count": 1,
+      "volume_mm3": 12038.791805028459,
+      "bounds_mm": [
+        100.0,
+        25.0,
+        6.0
+      ],
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 12038.791805028406,
+      "stl": {
+        "triangles": 2052,
+        "watertight": true,
+        "volume_mm3": 12038.909536931673,
+        "bounds_mm": [
+          100.0,
+          25.0,
+          6.0
+        ]
+      }
+    }
+  },
+  "full_test_suite": {
+    "report": "outputs/slot_only_full_tests.xml",
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "112",
+    "time": "140.970",
+    "timestamp": "2026-09-22T08:37:30.819978+08:00",
+    "hostname": "LAPTOP-V9IAFP8B"
+  },
+  "original_benchmark_acceptance": {
+    "report": "outputs/slot_only_b1_regression/acceptance_report.json",
+    "cases": 6,
+    "all_passed": true
+  },
+  "robot_regression": {
+    "command": "python -m unittest discover -s tests -p 'test_*.py' -v",
+    "passed": 4
+  },
+  "changed_manifest_files": [
+    "drawing_cad\\cad.py",
+    "drawing_cad\\dimensions.py",
+    "drawing_cad\\pattern_cad.py",
+    "drawing_cad\\pattern_features.py",
+    "drawing_cad\\pattern_geometry.py",
+    "drawing_cad\\preview.py",
+    "schemas\\drawing2cad.schema.json"
+  ],
+  "new_production_modules": [
+    "drawing_cad/slot_inference.py"
+  ],
+  "prohibited_part_name_mentions": [],
+  "remaining_assumptions": [
+    "Rectangular front view wider than twice its height; horizontal straight slots only.",
+    "Unique aligned orthographic side view and explicit plate width, height, thickness with known units.",
+    "Undimensioned geometry is to scale; X/Y calibration differs at most 5 percent.",
+    "Inferred slots are through cuts with heuristic confidence 0.55; no nominal or tolerance is fabricated.",
+    "Explicit rejected annotations and incomplete/conflicting position constraints are not overwritten.",
+    "Existing contour, size-ratio and coordinate-clustering thresholds can reject or merge difficult geometry."
+  ]
+}

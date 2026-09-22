@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "completed": true,
+  "simulated_seconds": 23.499999999997854,
+  "lifted": true,
+  "max_lift_m": 0.2425530936465041,
+  "bilateral_contact_seconds": 9.844,
+  "transfer_held_ratio": 1.0,
+  "final_ball_position_m": [
+    0.5003684293375747,
+    0.18989520097087895,
+    0.16486664564874912
+  ],
+  "target_position_m": [
+    0.5,
+    0.19,
+    0.165
+  ],
+  "final_xy_error_m": 0.0003830444011997623,
+  "final_z_error_m": 0.00013335435125089168,
+  "final_ball_speed_m_s": 3.703027591603924e-15,
+  "released": true,
+  "mujoco_version": "3.3.7",
+  "grasp_method": "physical contact and friction; no weld",
+  "robot": "Franka Emika Panda (MuJoCo Menagerie)",
+  "source_scene": "<external>/scene.xml",
+  "arm_joints": 7,
+  "actuators": 8,
+  "gravity_compensation": "ideal, robot bodies only",
+  "max_ik_position_error_m": 1.9953009497937124e-06
+}
