@@ -1,5 +1,17 @@
 # 版本记录
 
+## 0.5.0 — 完整管线与 Web 工作台
+
+- CAD2MuJoCo：STL 与 parsed.json → 视觉网格、凸包碰撞、显式惯量的 MJCF，场景拼接与落体验证。
+- Perception：固定相机 RGB-D 与已知 CAD 位姿估计；视觉失败不回退真值。
+- Manipulation：板件外缘抓取候选、TCP 校准、IK 与接触/抬升/保持判定。
+- Pick-and-place：搬运、放置、释放撤离与多帧视觉复核；位置误差以释放后视觉实测为准。
+- Embodied agent：TaskPlan 调度 observe→locate→pick→place→verify，失败结构化传播，不接 LLM/VLM。
+- Language planner：离线自然语言 → 经 schema/目录校验的 pending TaskPlan，仅规划不执行。
+- full_validation.py：统一发布前验证入口，覆盖 e2e 与分模块门禁。
+- Web 工作台 V0.1：Next.js 前端 + FastAPI 后端，浏览器内完成上传图纸 → 生成 3D → 配置并运行 Panda 抓取放置仿真 → 视觉复核结果与同次执行 MP4 录像。
+- 主 README 与架构文档补齐 Web 工作台章节、界面截图与仓库结构。
+
 ## 0.4.0 — 首次仓库快照
 
 - 工业 PDF 文字与图形解析，支持 `100.00mm±0.20`。
