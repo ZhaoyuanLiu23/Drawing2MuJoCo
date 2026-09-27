@@ -1,0 +1,5 @@
+fastapi==0.141.1
+uvicorn==0.54.0
+python-multipart==0.0.32
+Pillow==12.3.0
+PyMuPDF==1.28.2
