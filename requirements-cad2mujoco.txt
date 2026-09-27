@@ -1,0 +1,4 @@
+# Independent bridge; same versions as the existing simulation environment.
+# No CadQuery, OCR, trimesh, or mesh-decomposition dependency is needed.
+mujoco==3.3.7
+numpy==2.0.2

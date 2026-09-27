@@ -1,0 +1,79 @@
+{
+  "verified_utc": "2026-09-25T01:41:16.809168+00:00",
+  "pipeline": "cad_mujoco 0.1.0",
+  "mujoco": "3.3.7",
+  "tests": {
+    "cad_bridge": {
+      "passed": 13,
+      "skipped": 0,
+      "actual_panda_included": true
+    },
+    "drawing2cad": {
+      "tests": 112,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "b1_acceptance": {
+      "passed": 6
+    },
+    "original_grasp": {
+      "passed": 4,
+      "skipped": 0
+    }
+  },
+  "native_mjcf_load": {
+    "standalone_part_nq": 7,
+    "panda_scene_nq": 16,
+    "panda_scene_nu": 8,
+    "portable_native_xml_load": true
+  },
+  "existing_code_unchanged": true,
+  "unchanged_tracked_file_count": 43,
+  "panda_example": {
+    "input_stl": "examples/bracket/result/model.stl",
+    "input_parsed": "examples/bracket/result/parsed.json",
+    "density_kg_m3": 7800,
+    "density_source": "explicit benchmark parameter; not material recognition",
+    "validation": {
+      "success": true,
+      "checks": {
+        "started_above_table": true,
+        "no_initial_part_overlap": true,
+        "no_other_object_contacts": true,
+        "fell_under_gravity": true,
+        "table_contact": true,
+        "sustained_table_contact": true,
+        "settled_linear_speed": true,
+        "settled_angular_speed": true,
+        "stable_height": true,
+        "no_excess_penetration": true,
+        "resting_on_table": true,
+        "no_numerical_warnings": true
+      },
+      "simulated_seconds": 5.000000000000365,
+      "first_table_contact_s": 0.17475000000000013,
+      "initial_com_z_m": 0.283,
+      "final_com_world_m": [
+        0.5000038580383198,
+        -9.744213969586326e-08,
+        0.13299956881379632
+      ],
+      "final_linear_speed_m_s": 3.6893504930814343e-06,
+      "final_angular_speed_rad_s": 9.427094986502046e-05,
+      "minimum_bottom_z_m": 0.12902599207540238,
+      "table_top_z_m": 0.13,
+      "penetration_tolerance_m": 0.0006000000000000001,
+      "impact_penetration_tolerance_m": 0.002,
+      "tail_contact_fraction": 1.0,
+      "tail_max_linear_speed_m_s": 4.4850517522459605e-05,
+      "tail_height_range_m": 4.0480910484808064e-08,
+      "initial_scene_contacts": 0
+    }
+  },
+  "notes": [
+    "All new physical tests are deterministic falling rigid bodies, with no grasp controller.",
+    "Prior Drawing2CAD test run reports 31 upstream dependency deprecation warnings; no failures.",
+    "Single convex hull collision fills holes/slots. Mass uses the actual closed STL instead."
+  ]
+}
