@@ -2,11 +2,13 @@
 
 **从二维工程图提取有证据的几何特征，构建参数化 CAD，并逐步走向机器人仿真。**
 
-当前项目版本 **v0.4.0**。已实现 PDF / PNG / JPG → 几何与尺寸解析 → 证据 JSON → STEP / STL / 3D 预览；同时保留独立运行的 MuJoCo Panda 抓球与轨迹演示。**CAD 零件自动进入 MuJoCo、自动抓取或装配尚未实现。**
+已发布快照版本 **v0.4.0**。已实现 PDF / PNG / JPG → 几何与尺寸解析 → 证据 JSON → STEP / STL / 3D 预览；同时保留独立运行的 MuJoCo Panda 抓球与轨迹演示。当前工作区已增加 **STL + parsed.json → MJCF → Panda 桌面落体验证**、板件外缘抓取、RGB-D 位姿估计，以及**视觉抓取 → 搬运放置 → 释放后视觉复核**。能力仍限于已验证的板件和场景范围，不包含 RL、VLM 或装配。
 
 尺寸来自图纸，缺失信息明确记录为推断，无法解决的歧义阻止导出。模型成功生成不等于图纸已被完全理解，也不等于满足制造要求。
 
-![真实工业 PDF 生成的槽板，槽尺寸为推断值](examples/bracket/result/preview.png)
+![Web 工作台：上传 → 生成 3D → 运行仿真 → 查看结果](docs/images/web-workbench.png)
+
+以上是本地 **Web 工作台 V0.1**：浏览器内完成"上传图纸 → 生成 3D → 配置并运行 Panda 抓取放置仿真 → 查看视觉复核结果和 MP4 录像"，见 [Web 工作台说明](#web-工作台-v01)。
 
 ## 四个开发阶段
 
@@ -32,11 +34,18 @@ flowchart LR
   F --> H[CadQuery / OpenCASCADE]
   H --> I[STEP / STL]
   H --> J[PNG / 交互 HTML 预览]
-  I -. 规划中 .-> K[网格与碰撞 / MJCF]
-  K -. 规划中 .-> L[MuJoCo 场景与抓取]
+  I -->|STL| K[visual / 凸包碰撞 / 显式惯量 / MJCF]
+  G --> K
+  K --> L[MuJoCo Panda 测试场景 / 自由落体]
+  L --> M[Ground-truth pose / 板件外缘抓取 / 抬升保持]
+  L --> V[固定 RGB-D / 已知 CAD 位姿估计]
+  V --> P[视觉抓取 / 搬运 / 释放 / 新视觉复核]
+  P -. 规划中 .-> N[装配]
 ```
 
 ## 成功案例
+
+![真实工业 PDF 生成的槽板，槽尺寸为推断值](examples/bracket/result/preview.png)
 
 | 案例 | 结果 | 保留的解释 |
 | --- | --- | --- |
@@ -47,6 +56,31 @@ flowchart LR
 | [Panda 抓球](examples/simulation/README.md) | 抓取、搬运、释放及轨迹 | 独立仿真演示，尚未使用 Drawing2CAD 生成的零件 |
 
 案例中的数值属于输入/验证数据，不用于生产代码匹配零件。JSON 的 `source`、`nominal/min/max`、`confidence`、`evidence`、`conflicts` 与生成配方一起保存。
+
+## Web 工作台（V0.1）
+
+`web/` 目录提供一个独立的本地工作台，把上述管线串成一次浏览器内操作：
+
+**上传工程图（PDF/PNG/JPG，≤10 MiB）→ 调用 Drawing2CAD 生成 STEP/STL → Three.js 交互 3D 预览 → 配置物体初始位置与目标区域 → 真实 Panda 视觉抓取放置仿真 → 查看视觉复核结果与同次执行 MP4 录像。**
+
+- **只衔接、不重写**：Web 后端以子进程调用根目录 `drawing2cad.py` 和既有 `cad_mujoco` / `pick_place_task` / `run_embodied_agent` 路径，不新增机器人算法，不修改识别、抓取或验证逻辑。
+- **不伪造结果**：任务成功以释放后视觉复核为准；位置误差来自视觉包围盒与目标的实测距离；管线不提供的数据（如姿态误差）显示为"—"而不是零值占位；生成含推断时如实标注 needs_review/assumptions。
+- **技术栈**：前端 Next.js（pnpm），后端 FastAPI + 独立虚拟环境；前端经 Next.js 同步转发访问 `/api/*`，不开放 CORS；只绑定 127.0.0.1。
+- **边界**：本地单进程同步服务，无云调度、无并发队列、无登录；HTTP 同步等待最长 600 秒。
+
+快速启动（两个终端）：
+
+```powershell
+# 终端一：前端（首次先 pnpm install --frozen-lockfile）
+cd web\frontend
+pnpm dev          # http://127.0.0.1:3000
+
+# 终端二：后端（首次先建立 .venv 并安装 requirements-dev.txt）
+cd web\backend
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+上传/生成/仿真三个接口的请求与响应格式、存储结构、错误码、录像管线及 87+ 项测试说明，见 [web/README.md](web/README.md)。
 
 ## Windows / PyCharm 快速开始
 
@@ -97,6 +131,18 @@ python panda_grasp.py --model "D:\models\mujoco_menagerie\franka_emika_panda\sce
 
 ## 输出
 
+独立的 CAD→MuJoCo 转换入口是 `cad2mujoco.py`，使用 MuJoCo 解释器，并要求显式质量或密度。它不修改 Drawing2CAD 识别或现有抓球行为。运行命令、MJCF 结构、单位/惯量来源与凸包碰撞限制见 [CAD→MuJoCo 说明](docs/CAD_TO_MUJOCO.md)。
+
+独立抓取入口是 `manipulate_cad.py`，输入含 Panda 的 CAD2MuJoCo `scene.xml`，输出候选、真实物体轨迹、接触与成功/失败记录。运行方式和 IK、夹爪配置、几何及稳定性边界见 [Manipulation 说明](docs/MANIPULATION.md)。
+
+新增独立 RGB-D 感知适配层：`manipulate_cad.py ... --pose-source vision` 从固定相机 depth/segmentation 与已知 CAD 估计位姿；默认 `--pose-source ground_truth` 保留原行为。视觉感知失败不回退真值。观察时机、对称歧义、误差和运行方式见 [Perception 说明](docs/PERCEPTION.md)。
+
+独立搬运放置入口：`place_cad.py scene.xml --target-xy X Y --zone-size WIDTH HEIGHT`，目标区域使用世界米制坐标。释放撤离后重新采集多帧 RGB-D，以视觉结果判断成功，真值仅用于最终离线评估。见 [Pick-and-Place 说明](docs/PICK_AND_PLACE.md)。
+
+新增独立确定性 Agent：`run_embodied_agent.py scene.xml --plan examples/agent/task_plan.json --output outputs/embodied_agent/panda_cad`。按结构化 TaskPlan 调用 `observe → locate → pick → place → verify`，复用同一次原有仿真；失败返回结构化错误并停止后续步骤。Agent 不接触关节或目标真值，不接 LLM/VLM。API、schema、运行方法及阶段完成与任务成功的区别见 [Robot Skills 说明](docs/EMBODIED_AGENT.md)。
+
+独立语言规划入口：`plan_instruction.py "把板件放到装配区" --catalog examples/agent/allowed_catalog.json --output outputs/language_planner/assembly`。默认离线解析，只生成经现有 schema、目录允许列表及计划契约校验的 pending TaskPlan，不执行机器人。提供独立 LLM callable adapter；未知/歧义指令和非法模型输出明确失败。见 [Language Planner 说明](docs/LANGUAGE_PLANNER.md)。
+
 ```text
 outputs/my_part/
 ├── parsed.json          # 图纸、尺寸、约束、置信度、推断和冲突
@@ -114,12 +160,14 @@ CAD 坐标使用 mm；STL 本身不携带单位。STEP 不包含原生 CAD 软�
 
 ## 验证与边界
 
-当前基线：**112 项 Drawing2CAD 测试通过**，原 B1 图纸 6 项验收通过，本机 MuJoCo 物理测试 4 项通过。详细命令和机器依赖见 [验证记录](docs/VALIDATION.md)。
+发布前使用统一入口，覆盖所有模块、原抓球、B1/B2/B3 和从新工程图开始的 E2E；检查预期测试数量，任何 skip/xfail/error 都不能作为发布通过。历史分模块记录见 [验证记录](docs/VALIDATION.md)，当前入口及字段语义见 [完整验证](docs/FULL_VALIDATION.md)。
 
 ```cmd
-.venv-drawing2cad\Scripts\python.exe -m pytest tests\drawing2cad -q
-python -m unittest discover -s tests -p "test_*.py" -v
+set CAD_MUJOCO_PANDA_SCENE=C:\path\to\mujoco_menagerie\franka_emika_panda\scene.xml
+python full_validation.py --cad-python .venv-drawing2cad\Scripts\python.exe
 ```
+
+结果写入 `outputs/full_validation/<timestamp>/validation.json`。`test_gate_success` 与发布 `success` 分开：perception fixture 的独立 drop failure 仍是 blocker，即使感知/抓取测试通过也不会报告发布成功。仅在根目录执行 unittest discover 不会覆盖各子目录测试。
 
 支持限定几何组合：圆盘/同心孔、单圆角板件、水平长圆槽板及同规格孔的可选锥形沉孔。矩形槽板仍要求宽大于高两倍及可唯一配对的正交侧视图。任意曲面、多台阶、盲孔、旋转槽和复杂装配尚不支持。
 
@@ -131,6 +179,17 @@ python -m unittest discover -s tests -p "test_*.py" -v
 Drawing2MuJoCo/
 ├── drawing_cad/         # 现有 CAD pipeline
 ├── drawing2cad.py
+├── cad_mujoco/          # 独立的 STL/证据 → 刚体 MJCF、场景拼接和落体验证
+├── cad2mujoco.py
+├── manipulation/       # 实时位姿、外缘候选、Panda IK 与物理抓取验证
+├── perception/         # RGB-D、点云/CAD 配准、视觉适配与离线误差评估
+├── pick_place_task/    # 独立搬运、释放、撤离和新视觉任务判定
+├── place_cad.py
+├── embodied_agent/     # TaskPlan、robot skills、原任务阶段适配与失败传播
+├── run_embodied_agent.py
+├── language_planner/   # 自然语言、provider adapter、目录/schema 校验；仅规划
+├── plan_instruction.py
+├── manipulate_cad.py
 ├── panda_grasp.py       # Panda 仿真入口
 ├── pick_and_place.py    # 简化机械臂入口
 ├── export_video.py
@@ -140,6 +199,7 @@ Drawing2MuJoCo/
 ├── scripts/
 ├── examples/            # 精选输入、模型、预览和脱敏解析证据
 ├── docs/                # 安装、架构、验证、路线图
+├── web/                 # 本地 Web 工作台：Next.js 前端 + FastAPI 后端（见 web/README.md）
 ├── outputs/             # 本地结果，默认不提交
 └── requirements*.txt
 ```

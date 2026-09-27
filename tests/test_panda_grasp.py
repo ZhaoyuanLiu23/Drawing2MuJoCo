@@ -1,17 +1,21 @@
 """Panda end-to-end physics checks using the user's installed Menagerie model."""
 import unittest
+import os
+from pathlib import Path
 
 import mujoco
 import numpy as np
 
 from panda_grasp import MODEL_PATH, OPEN_GRIPPER, PandaGrasp
 
+PANDA_SCENE = Path(os.environ.get("CAD_MUJOCO_PANDA_SCENE", str(MODEL_PATH)))
 
-@unittest.skipUnless(MODEL_PATH.is_file(), "Local Panda Menagerie model is not installed")
+
+@unittest.skipUnless(PANDA_SCENE.is_file(), "Set CAD_MUJOCO_PANDA_SCENE to the Panda Menagerie scene")
 class PandaGraspTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.sim = PandaGrasp()
+        cls.sim = PandaGrasp(scene_path=PANDA_SCENE)
 
     def setUp(self):
         self.sim.reset()
