@@ -1,0 +1,536 @@
+{
+  "generated_at": "2026-09-25T22:24:26.475295+08:00",
+  "environment": {
+    "python": "3.9.13",
+    "jsonschema": "4.25.1",
+    "platform": "Windows"
+  },
+  "scope": "Natural language to existing TaskPlan, planning only; no robot execution from planner",
+  "tests": {
+    "language_planner": {
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/tests.log"
+    },
+    "agent": {
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/regression_agent.log"
+    },
+    "pick_place": {
+      "passed": 18,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/regression_pick_place.log"
+    },
+    "perception": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/regression_perception.log"
+    },
+    "manipulation": {
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/regression_manipulation.log"
+    },
+    "cad_mujoco": {
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/regression_cad_mujoco.log"
+    },
+    "ball": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "log": "outputs/language_planner_dev/regression_ball.log"
+    },
+    "drawing2cad": {
+      "passed": 112,
+      "failed": 0,
+      "warnings": 31,
+      "log": "outputs/language_planner_dev/regression_drawing.log"
+    }
+  },
+  "new_tests_passed": 24,
+  "existing_tests_passed": 192,
+  "total_unit_pytest_passed": 216,
+  "additional_b1_acceptance": {
+    "passed": 6,
+    "report": "outputs/language_planner_dev/b1_acceptance/acceptance_report.json"
+  },
+  "required_cases": {
+    "normal_placement": {
+      "success": true,
+      "task_plan": {
+        "goal": {
+          "type": "pick_and_place",
+          "object": "cad_part",
+          "target": {
+            "center_xy_m": [
+              0.46,
+              -0.09
+            ],
+            "size_xy_m": [
+              0.15,
+              0.1
+            ],
+            "frame": "world",
+            "unit": "m"
+          }
+        },
+        "steps": [
+          {
+            "id": "step_1",
+            "skill": "observe",
+            "arguments": {},
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_2",
+            "skill": "locate",
+            "arguments": {
+              "object": "cad_part"
+            },
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_3",
+            "skill": "pick",
+            "arguments": {
+              "object": "cad_part"
+            },
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_4",
+            "skill": "place",
+            "arguments": {
+              "object": "cad_part",
+              "target": {
+                "center_xy_m": [
+                  0.46,
+                  -0.09
+                ],
+                "size_xy_m": [
+                  0.15,
+                  0.1
+                ],
+                "frame": "world",
+                "unit": "m"
+              }
+            },
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_5",
+            "skill": "verify",
+            "arguments": {
+              "object": "cad_part",
+              "target": {
+                "center_xy_m": [
+                  0.46,
+                  -0.09
+                ],
+                "size_xy_m": [
+                  0.15,
+                  0.1
+                ],
+                "frame": "world",
+                "unit": "m"
+              }
+            },
+            "status": "pending",
+            "result": null
+          }
+        ],
+        "status": "pending",
+        "observations": [],
+        "failures": []
+      },
+      "failure": null,
+      "metadata": {
+        "provider": "deterministic",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e",
+        "target_id": "target_a",
+        "schema_validated": true,
+        "contract_validated": true,
+        "allowlist_validated": true
+      }
+    },
+    "different_target": {
+      "success": true,
+      "task_plan": {
+        "goal": {
+          "type": "pick_and_place",
+          "object": "cad_part",
+          "target": {
+            "center_xy_m": [
+              0.535,
+              0.085
+            ],
+            "size_xy_m": [
+              0.16,
+              0.14
+            ],
+            "frame": "world",
+            "unit": "m"
+          }
+        },
+        "steps": [
+          {
+            "id": "step_1",
+            "skill": "observe",
+            "arguments": {},
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_2",
+            "skill": "locate",
+            "arguments": {
+              "object": "cad_part"
+            },
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_3",
+            "skill": "pick",
+            "arguments": {
+              "object": "cad_part"
+            },
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_4",
+            "skill": "place",
+            "arguments": {
+              "object": "cad_part",
+              "target": {
+                "center_xy_m": [
+                  0.535,
+                  0.085
+                ],
+                "size_xy_m": [
+                  0.16,
+                  0.14
+                ],
+                "frame": "world",
+                "unit": "m"
+              }
+            },
+            "status": "pending",
+            "result": null
+          },
+          {
+            "id": "step_5",
+            "skill": "verify",
+            "arguments": {
+              "object": "cad_part",
+              "target": {
+                "center_xy_m": [
+                  0.535,
+                  0.085
+                ],
+                "size_xy_m": [
+                  0.16,
+                  0.14
+                ],
+                "frame": "world",
+                "unit": "m"
+              }
+            },
+            "status": "pending",
+            "result": null
+          }
+        ],
+        "status": "pending",
+        "observations": [],
+        "failures": []
+      },
+      "failure": null,
+      "metadata": {
+        "provider": "deterministic",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e",
+        "target_id": "target_b",
+        "schema_validated": true,
+        "contract_validated": true,
+        "allowlist_validated": true
+      }
+    },
+    "nonexistent_target": {
+      "success": false,
+      "task_plan": null,
+      "failure": {
+        "code": "UNKNOWN_TARGET",
+        "stage": "interpretation",
+        "message": "Reference is not registered",
+        "details": {}
+      },
+      "metadata": {
+        "provider": "deterministic",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e"
+      }
+    },
+    "nonexistent_object": {
+      "success": false,
+      "task_plan": null,
+      "failure": {
+        "code": "UNKNOWN_OBJECT",
+        "stage": "interpretation",
+        "message": "Reference is not registered",
+        "details": {}
+      },
+      "metadata": {
+        "provider": "deterministic",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e"
+      }
+    },
+    "illegal_skill": {
+      "success": false,
+      "task_plan": null,
+      "failure": {
+        "code": "ILLEGAL_SKILL",
+        "stage": "allowlist",
+        "message": "Only the five existing robot skills are allowed",
+        "details": {}
+      },
+      "metadata": {
+        "provider": "mock",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e"
+      }
+    },
+    "malformed_model_output": {
+      "success": false,
+      "task_plan": null,
+      "failure": {
+        "code": "MALFORMED_MODEL_OUTPUT",
+        "stage": "parsing",
+        "message": "Provider must return one strict JSON value without Markdown, duplicate keys or nonfinite numbers",
+        "details": {}
+      },
+      "metadata": {
+        "provider": "mock",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e"
+      }
+    },
+    "schema_validation_failure": {
+      "success": false,
+      "task_plan": null,
+      "failure": {
+        "code": "SCHEMA_VALIDATION_FAILED",
+        "stage": "schema",
+        "message": "Model output does not satisfy the existing task_plan.schema.json",
+        "details": {
+          "violations": [
+            {
+              "path": [
+                "steps",
+                0,
+                "arguments"
+              ],
+              "rule": "maxProperties"
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "provider": "mock",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e"
+      }
+    },
+    "llm_unavailable": {
+      "success": false,
+      "task_plan": null,
+      "failure": {
+        "code": "LLM_UNAVAILABLE",
+        "stage": "provider",
+        "message": "Provider is unavailable; no fallback was used",
+        "details": {}
+      },
+      "metadata": {
+        "provider": "llm-callable",
+        "prompt_version": "language-planner-v1",
+        "planning_only": true,
+        "catalog_sha256": "bf6fbc73ed00e6a3791db6bef06aedde867be137a4947a173934816b76c6dff4",
+        "schema_sha256": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e"
+      }
+    }
+  },
+  "cli_examples": {
+    "assembly": {
+      "success": true,
+      "error_code": null,
+      "task_plan_written": true,
+      "executed": false,
+      "result": "outputs/language_planner/assembly/planning_result.json"
+    },
+    "buffer": {
+      "success": true,
+      "error_code": null,
+      "task_plan_written": true,
+      "executed": false,
+      "result": "outputs/language_planner/buffer/planning_result.json"
+    },
+    "unknown_target": {
+      "success": false,
+      "error_code": "UNKNOWN_TARGET",
+      "task_plan_written": false,
+      "executed": false,
+      "result": "outputs/language_planner/unknown_target/planning_result.json"
+    }
+  },
+  "provider_validation": {
+    "deterministic_actual_run": true,
+    "mock_raw_output_tested": true,
+    "llm_callable_request_and_failures_tested": true,
+    "external_llm_api_called": false,
+    "live_model_accuracy": "not evaluated",
+    "retries": 0,
+    "fallback": false
+  },
+  "handoff": "Recheck actual schema, current catalog fingerprint, canonical pending plan and allowlists; return TaskPlan only",
+  "security_checks": [
+    "No robot execution imports or actuator/state access in planner",
+    "Unknown skill/object/target, invented coordinates, extra fields rejected",
+    "Duplicate JSON keys, malformed responses, nonfinite numbers rejected",
+    "Stale/forged execution records and mismatched step goals rejected",
+    "Catalog/schema changes and tampered result checked at handoff",
+    "Provider mutation of supplied catalog copy cannot expand trusted allowlist"
+  ],
+  "protected_existing_files": {
+    "count": 78,
+    "changed": [],
+    "sha256_before_and_after": {
+      "cad2mujoco.py": "f498c736ba13da2cda0211405232c2e6bb507cde82ca8ea4b322cc441363a5a5",
+      "cad_mujoco/__init__.py": "e9789285e1d662aa2f8b335a1695f48967124145309d4938d2331dd4a47f7dd3",
+      "cad_mujoco/cli.py": "80e4fc01d6897d85d15b2f90534fd41846acf617bc2aec49db8d6ef2fa23d485",
+      "cad_mujoco/mesh.py": "286c0c13907e8fdb9592edd8d2e28a01be8c41db7463c55add6fe291e697495e",
+      "cad_mujoco/metadata.py": "ba38868cc222ff3259cbff3d330191cfc15893e5a6f4717b5fc074d9038a61e6",
+      "cad_mujoco/mjcf.py": "df3aa2850ac42aa654b32f92dd0fffeff919bd2e94eb21593066ed9bb6ee8904",
+      "cad_mujoco/pipeline.py": "d2f894b6dd47f12c78e84cae84b2f4b3f8974e884956cea50553215977eb3305",
+      "cad_mujoco/validation.py": "8cf7a3eda6fb9a670b833f38680a8b6b4b580c7bd0e6e9a922d19fc75cc0c171",
+      "drawing2cad.py": "2284737c06822d8b53f7f4d84103b546ea375f9c29ccd08c014767a3ff01a562",
+      "drawing_cad/__init__.py": "4337ae6200e18f81aede63d64bf32140e6f0ebb555733a29b86b389056c5ebdf",
+      "drawing_cad/cad.py": "255d01b18565b03c8a5c4b40adac8085febdba55f24983cef47cf46a63315e47",
+      "drawing_cad/cli.py": "5ccef529efb910730dad87cf2d2cf7fb0f4bc3eac50d51dfce309ef0a20b6191",
+      "drawing_cad/dimensions.py": "5938a3cd67f1714e108a38e5e07bfac21735f739ea93b7750a8ed77fa4b85b2b",
+      "drawing_cad/feature_callouts.py": "2a2796e6bd5a5a1dab5f7cdc0489704458d36961d2766cf0cb2865cc253b469e",
+      "drawing_cad/features.py": "f43753dc65d4538852fbe052c1d80a7b32cee40295630f693a74b18313af7b43",
+      "drawing_cad/geometry.py": "bb99418e48237499dce179ffd3b1fef9afc6fae6dddc833c1389e0be8d71e6ba",
+      "drawing_cad/ingest.py": "0c23e47c5372a7cee71a1b9949d26c895322ac245916f65ece8be9c5594bcca8",
+      "drawing_cad/leader_dimensions.py": "50fb38363410c8737909b0932a140306ad6716cc7d0d110843323c932ea55df7",
+      "drawing_cad/ocr.py": "f5c7c9add2ecd9d5bfea57dfa162d22cf09f6224e6341ce8ff2eedc5e861e2ea",
+      "drawing_cad/pattern_cad.py": "d85213c606e7f4874d00c11418b983b6efba10690c2def3face291f7e02f91d9",
+      "drawing_cad/pattern_constraints.py": "e6d5e8989a982e31bc150567793ec3e02d2ea0e6c8c3943eca2f5f81862631e1",
+      "drawing_cad/pattern_features.py": "1de8fe17915de3bd577108bf776c7adec5802dca9dc86d40027949b734ec1da4",
+      "drawing_cad/pattern_geometry.py": "201f55bbb36b6af61217e578664cdca8f9ad743be35a4a67f55783e8a74a8e59",
+      "drawing_cad/pipeline.py": "9568a4e10ad1c09d0e0bebd8730cfa4b430d8a3ff5ecb53e23316ca9d22a4abc",
+      "drawing_cad/preprocess.py": "4e56d8e8241c6e446cd510dc05383775c5f11238404cc950cbe83ed97b32d46f",
+      "drawing_cad/preview.py": "9824eb5f9832cea48bd3c68a03588bf7e0e13f3cefb2a13233e504da57e9e05f",
+      "drawing_cad/profile_cad.py": "47764e36ca2feb8276e1f863744a8d893ce2b40c8ede812766e0e0a800c0891e",
+      "drawing_cad/profile_features.py": "5d0705d9f7b18d9c87e37a7ceb614d7e34887999a8047b766f12f88ec02b84a3",
+      "drawing_cad/profile_geometry.py": "84980835a84d5e0ede6e91aed5c7d15b3cf61d63c83e10a07e068735f8a61347",
+      "drawing_cad/slot_inference.py": "20b7aa51f39f9a22424220827a7c8163e561ff52e54d3de02a0eb760786fbc34",
+      "drawing_cad/types.py": "3be47745b39c0e9f8521b8f21f50f9e79cb59f1f1c7d1d124f6f3034ec8afacc",
+      "embodied_agent/__init__.py": "6b83b5d2bc26b38ee6f390125d3ae752beeb2ba7eb7ebab5be65b1ed8a322912",
+      "embodied_agent/agent.py": "445b7bbaf91ec62b07576637536aa780036ce327540fa2389ec045341210ea5d",
+      "embodied_agent/backend.py": "739aa431b670f09ac81aeee8798bf6ec4e69f0a3de61324f946abed7661984ed",
+      "embodied_agent/models.py": "94f7c99d359d1e64eb55ecb27e8409f57fed4ec8d43992860881e51b4f1f4211",
+      "embodied_agent/runner.py": "55f9a81db2be99b6c236a1e3764361c0eb5bbd8c3e2365c361dc4a01f35b17c9",
+      "embodied_agent/skills.py": "05bf4a4954d1ebff52c49efeb07795351c4be0d0df086b9a3f4a888f2ca873e3",
+      "export_video.py": "05a6d1726f613cbf061e22ba5135d517f1b841eb95fca91b5bf29851ab9b9aba",
+      "manipulate_cad.py": "518b85b2ef8ca1873dc9457869cbedc769e894dd14ee69b5b3e02f54e304552d",
+      "manipulation/__init__.py": "2502f45abe45c1e4eb0cfffcbebfc337ec86dd9919c1b1586fb32330c17eda0d",
+      "manipulation/geometry.py": "d4088592737ab166748ad68cb9e673519d693ee0519da498324cfd1002277709",
+      "manipulation/panda.py": "e61bd1703813550b60c79ea6054728f6a53e66892bf0d5d7d69c896f5b5a1d9c",
+      "manipulation/pipeline.py": "213dd9896cb3a8ec6bc3ca4c96e75875fe92977cc4faee344e4cd51bbe497d5c",
+      "panda_grasp.py": "c991b8a18aa2fc03767c9514c04255a91f005c1ef086826b2356394fd208bb0c",
+      "perception/__init__.py": "954f15cb8b3aecf0408363b6f08391488303c0f1f2be04cb73fbbb84ba0a3125",
+      "perception/camera.py": "b7327f3eca7d864f32811f07080f019f3242a569fe5b0492d48723f479d44dc2",
+      "perception/evaluation.py": "47e6bc74e9a15dd5640d0a280c5492842f1ba71251d177fa62c05114e3acee09",
+      "perception/pipeline.py": "426f82ecb7f1db2a5016232bb1761245457a6c3f57b17fac67fb2ff094d394d4",
+      "perception/registration.py": "7bd48a57b4a91f2db873fd33fe9bacf5a6127b2a53eb5ec5dd75e951d5d05527",
+      "pick_and_place.py": "615152a02bc180f10f1571d50adccd9c3805fee1d17a17186c9f63b1970efb4b",
+      "pick_place_task/__init__.py": "f0ba2e2e3c2b230249d71b12da9e8f0afa1c17c11a4e601b61ae25f60937e7ae",
+      "pick_place_task/evaluation.py": "c65498921ea84cb0dc539cdb1715d05315115ad03451e2f824295fe8bfebd1b6",
+      "pick_place_task/pipeline.py": "a689b0363f197e552a317370563c776b3e653b501bfb4635a6ecee68f20ab875",
+      "pick_place_task/planning.py": "fd6654ac69fa58b9a66240ebd8fad11b31c180483f6576237fb50f4f495b03de",
+      "pick_place_task/scene.py": "547b1c75007e1fd3117411c65e2df4525dd1fd372f6e79eafaecbe5a116efcbd",
+      "pick_place_task/verification.py": "bba31e79695556411cec6e57307f5b273b650d23a9212bd1cf47e703a5250775",
+      "place_cad.py": "ed37a91dec563cb4e13e42b267d8c27e7c6073c9484b032d3df6193b6f0b5edf",
+      "run_embodied_agent.py": "fd9bc77848a670ec94173bfcaf0e2818fb3791d35c40927dc12ec47913c11b36",
+      "schemas/task_plan.schema.json": "05f468ba211d4eba7960a5d9b7da3a4e1e6971754337372bb0a05d4abd9e474e",
+      "tests/cad2mujoco/test_bridge.py": "f01194b56549dfc0a53f08ce583322f26a92602d204298ac992a2342082c63eb",
+      "tests/drawing2cad/conftest.py": "f8a916252b125faf5090732f3dbc569f6d3b600d2b9df77d27e0fa30d9899433",
+      "tests/drawing2cad/orthographic_feature_fixture.py": "223d229f9e201800f2a5933a74b37dcc9e2ead7e4ec1c81f54cc746d44e1b655",
+      "tests/drawing2cad/pattern_fixture.py": "445ac392275e390227e1cbe1b5e839baac4a012234fc350c2a439b4bda957935",
+      "tests/drawing2cad/profile_fixture.py": "6bbd2d0d03d833b9fd484390c93343fc2ab8678348cfc49cf1c31288be9e0e6e",
+      "tests/drawing2cad/slot_only_fixture.py": "b30ded6ea1386732b4878ee05b946c2ae3a109717b3f9699ce643344e58f8e20",
+      "tests/drawing2cad/test_dimensions.py": "f14b5c8911dc2ac68db72b1c206bf70ed02a1f3346886bf851ae09a72ac31751",
+      "tests/drawing2cad/test_generic_feature_extensions.py": "f178f8af5497918cc0661f42b0c09139dd627c29114fc5e84b991ee4fb7f9d69",
+      "tests/drawing2cad/test_pattern.py": "e326ce77099ccc6b05d5e9d5eac21380f8714cb8df212ed79725a5103ff4a3b2",
+      "tests/drawing2cad/test_pipeline.py": "cb2ec80cfbff7728e8956f5855c596499f9f78baf5a2e51de4a69bc1b1f6a3f3",
+      "tests/drawing2cad/test_profile.py": "1ee804b97c8e9cc70b8d23fc9e03519a2af5fc65d6211315d323904102b3895d",
+      "tests/drawing2cad/test_slot_only.py": "a88142035c649ccffcbde65b36e39dc39d09d311f4e8d91788c72f577d8cba13",
+      "tests/drawing2cad/variable_pattern_fixture.py": "00a518d1241d67d6139686e566f32396dde6d14c1cd9cb0946401876d452c9dd",
+      "tests/embodied_agent/test_agent.py": "14f886988a74994c3da8a9a461e596e3e504802af9852a21d8b4e9664a2ebee1",
+      "tests/manipulation/test_manipulation.py": "95a9b6774afb7a2b8b3677a640aa9cbe22fc79308db06e52083b35a3cf40b34b",
+      "tests/perception/test_perception.py": "de84ba47be95172eab168fd522b0af962aee5b581f4076daeb62cf479645eca0",
+      "tests/pick_place_task/test_pick_place.py": "cff38f5ffe8c0e3da127652e16d221b6670678d7671620ae721009c35145f936",
+      "tests/test_panda_grasp.py": "9df8ff455ff74071ba471e7f30d9ff3f9ed6344d1bc560664600ae166e22ff3e",
+      "tests/test_pick_and_place.py": "d966de93e196c5df84f719b37a0b6b25bf4d945ba3a9e50f366302266d789f6c"
+    }
+  },
+  "new_source_sha256": {
+    "language_planner/catalog.py": "a0c980e6012188fa15891fc5007571c9b0d9bec49127dc93030d3208def4d1d9",
+    "language_planner/errors.py": "7aa4d33011791136892df67a8033d6bfb83f38c8059ef92d1e3ca87df82b7c16",
+    "language_planner/planner.py": "2e43a053f442742dbf8c7180106ca7a519b6e3c78ca7ccdc3ccba8e0eef84142",
+    "language_planner/prompt.py": "afc3a60f660983c7fcf721a99ea1e6ccd9ae2e1f611afd8d8f4ccc72627a2e15",
+    "language_planner/providers.py": "f14a838e97085969dafda14948b6f7d927ba6e218d3b0dfc971af3480f7df655",
+    "language_planner/validation.py": "e227662a03c1353232fd8c875dfc4b31f59828f10a575d7f6c577de6886f1a96",
+    "language_planner/__init__.py": "b971f2647eb4ea2113cffda35be4abeba0337637af6434b8ef33ead97e8e6e21",
+    "plan_instruction.py": "81b862a80a66580fee0e1f92cceadcfaf0eb5f1b5541ed38a1ddac6da8c416ae",
+    "tests/language_planner/test_planner.py": "16db99b4a3ce26e3327b3ce67dd1a05e135fce955f7056a489ec7fb0f60c4466",
+    "requirements-language-planner.txt": "4046ca1e3a64f4ea791fb4fb3d8566242086ff1c8e2431e2c349e1052ffc6ba0",
+    "examples/agent/allowed_catalog.json": "a6494c79488bb578dff6538863f009c3cbb6db9b41f0d0dae15ccc3021222f31"
+  },
+  "limits": [
+    "Offline planner uses explicit bilingual placement grammar and registered names; no arbitrary language understanding",
+    "Catalog is supplied by host application, not auto-discovered from scene",
+    "Schema and allowlists do not prove language interpretation is correct or motion is feasible",
+    "LLM provider is an injected text completion callable; host owns credentials, SDK and request timeout",
+    "Single selected object/target; no VLM, retries, replanning, or new skills"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Embodied Agent TaskPlan",
+  "description": "Structural contract for pending plans and execution records. Runtime additionally requires a fresh canonical plan and exact argument/goal agreement.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["goal", "steps", "status", "observations", "failures"],
+  "properties": {
+    "goal": {"$ref": "#/$defs/goal"},
+    "status": {"enum": ["pending", "running", "succeeded", "failed"]},
+    "steps": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": false,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/step"}, {"properties": {"id": {"const": "step_1"}, "skill": {"const": "observe"}, "arguments": {"type": "object", "maxProperties": 0}}}]},
+        {"allOf": [{"$ref": "#/$defs/step"}, {"properties": {"id": {"const": "step_2"}, "skill": {"const": "locate"}, "arguments": {"$ref": "#/$defs/objectArguments"}}}]},
+        {"allOf": [{"$ref": "#/$defs/step"}, {"properties": {"id": {"const": "step_3"}, "skill": {"const": "pick"}, "arguments": {"$ref": "#/$defs/objectArguments"}}}]},
+        {"allOf": [{"$ref": "#/$defs/step"}, {"properties": {"id": {"const": "step_4"}, "skill": {"const": "place"}, "arguments": {"$ref": "#/$defs/targetArguments"}}}]},
+        {"allOf": [{"$ref": "#/$defs/step"}, {"properties": {"id": {"const": "step_5"}, "skill": {"const": "verify"}, "arguments": {"$ref": "#/$defs/targetArguments"}}}]}
+      ]
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["step_id", "skill", "data"],
+        "properties": {"step_id": {"type": "string"}, "skill": {"enum": ["observe", "locate", "verify"]}, "data": {"type": "object"}}
+      }
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["step_id", "skill", "error"],
+        "properties": {"step_id": {"type": "string"}, "skill": {"$ref": "#/$defs/skill"}, "error": {"$ref": "#/$defs/error"}}
+      }
+    }
+  },
+  "$defs": {
+    "skill": {"enum": ["observe", "locate", "pick", "place", "verify"]},
+    "target": {
+      "type": "object", "additionalProperties": false,
+      "required": ["center_xy_m", "size_xy_m", "frame", "unit"],
+      "properties": {
+        "center_xy_m": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+        "size_xy_m": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "exclusiveMinimum": 0}},
+        "frame": {"const": "world"}, "unit": {"const": "m"}
+      }
+    },
+    "goal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "object", "target"],
+      "properties": {"type": {"const": "pick_and_place"}, "object": {"type": "string", "minLength": 1}, "target": {"$ref": "#/$defs/target"}}
+    },
+    "objectArguments": {
+      "type": "object", "additionalProperties": false,
+      "required": ["object"], "properties": {"object": {"type": "string", "minLength": 1}}
+    },
+    "targetArguments": {
+      "type": "object", "additionalProperties": false,
+      "required": ["object", "target"],
+      "properties": {"object": {"type": "string", "minLength": 1}, "target": {"$ref": "#/$defs/target"}}
+    },
+    "error": {
+      "type": "object", "additionalProperties": false,
+      "required": ["code", "message", "origin_stage", "details"],
+      "properties": {"code": {"type": "string"}, "message": {"type": "string"}, "origin_stage": {"type": "string"}, "details": {"type": "object"}}
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["skill", "success", "data", "error"],
+      "properties": {"skill": {"$ref": "#/$defs/skill"}, "success": {"type": "boolean"}, "data": {"type": "object"}, "error": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/error"}]}},
+      "allOf": [{"if": {"properties": {"success": {"const": true}}}, "then": {"properties": {"error": {"type": "null"}}}, "else": {"properties": {"error": {"$ref": "#/$defs/error"}}}}]
+    },
+    "step": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "skill", "arguments", "status", "result"],
+      "properties": {
+        "id": {"type": "string"}, "skill": {"$ref": "#/$defs/skill"}, "arguments": {"type": "object"},
+        "status": {"enum": ["pending", "running", "succeeded", "failed", "skipped"]},
+        "result": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/result"}]}
+      }
+    }
+  }
+}

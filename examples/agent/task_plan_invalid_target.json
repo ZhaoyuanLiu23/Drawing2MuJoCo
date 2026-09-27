@@ -1,0 +1,90 @@
+{
+  "goal": {
+    "type": "pick_and_place",
+    "object": "cad_part",
+    "target": {
+      "center_xy_m": [
+        2.0,
+        2.0
+      ],
+      "size_xy_m": [
+        0.15,
+        0.1
+      ],
+      "frame": "world",
+      "unit": "m"
+    }
+  },
+  "steps": [
+    {
+      "id": "step_1",
+      "skill": "observe",
+      "arguments": {},
+      "status": "pending",
+      "result": null
+    },
+    {
+      "id": "step_2",
+      "skill": "locate",
+      "arguments": {
+        "object": "cad_part"
+      },
+      "status": "pending",
+      "result": null
+    },
+    {
+      "id": "step_3",
+      "skill": "pick",
+      "arguments": {
+        "object": "cad_part"
+      },
+      "status": "pending",
+      "result": null
+    },
+    {
+      "id": "step_4",
+      "skill": "place",
+      "arguments": {
+        "object": "cad_part",
+        "target": {
+          "center_xy_m": [
+            2.0,
+            2.0
+          ],
+          "size_xy_m": [
+            0.15,
+            0.1
+          ],
+          "frame": "world",
+          "unit": "m"
+        }
+      },
+      "status": "pending",
+      "result": null
+    },
+    {
+      "id": "step_5",
+      "skill": "verify",
+      "arguments": {
+        "object": "cad_part",
+        "target": {
+          "center_xy_m": [
+            2.0,
+            2.0
+          ],
+          "size_xy_m": [
+            0.15,
+            0.1
+          ],
+          "frame": "world",
+          "unit": "m"
+        }
+      },
+      "status": "pending",
+      "result": null
+    }
+  ],
+  "status": "pending",
+  "observations": [],
+  "failures": []
+}

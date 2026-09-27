@@ -1,0 +1,18 @@
+{
+  "objects": [
+    {"id": "cad_part", "aliases": ["板件", "零件", "plate", "part"]}
+  ],
+  "targets": [
+    {
+      "id": "target_a",
+      "aliases": ["装配区", "目标A", "A区", "assembly zone"],
+      "region": {"center_xy_m": [0.46, -0.09], "size_xy_m": [0.15, 0.10], "frame": "world", "unit": "m"}
+    },
+    {
+      "id": "target_b",
+      "aliases": ["暂存区", "目标B", "B区", "buffer zone"],
+      "region": {"center_xy_m": [0.535, 0.085], "size_xy_m": [0.16, 0.14], "frame": "world", "unit": "m"}
+    }
+  ],
+  "skills": ["observe", "locate", "pick", "place", "verify"]
+}
