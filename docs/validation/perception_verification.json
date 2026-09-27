@@ -1,0 +1,1759 @@
+{
+  "verified_utc": "2026-09-25T02:53:05.531827+00:00",
+  "dependencies": {
+    "python": "3.9.13",
+    "mujoco": "3.3.7",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "pillow": "11.3.0"
+  },
+  "tests": {
+    "perception": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0
+    },
+    "manipulation": {
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0
+    },
+    "cad2mujoco": {
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0
+    },
+    "drawing2cad": {
+      "passed": 112,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 31
+    },
+    "original_ball": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "b1_acceptance": {
+      "passed": 6,
+      "failed": 0
+    }
+  },
+  "unchanged_existing_files": {
+    "drawing_cad\\cad.py": {
+      "sha256": "255d01b18565b03c8a5c4b40adac8085febdba55f24983cef47cf46a63315e47",
+      "unchanged": true
+    },
+    "drawing_cad\\cli.py": {
+      "sha256": "5ccef529efb910730dad87cf2d2cf7fb0f4bc3eac50d51dfce309ef0a20b6191",
+      "unchanged": true
+    },
+    "drawing_cad\\dimensions.py": {
+      "sha256": "5938a3cd67f1714e108a38e5e07bfac21735f739ea93b7750a8ed77fa4b85b2b",
+      "unchanged": true
+    },
+    "drawing_cad\\features.py": {
+      "sha256": "f43753dc65d4538852fbe052c1d80a7b32cee40295630f693a74b18313af7b43",
+      "unchanged": true
+    },
+    "drawing_cad\\feature_callouts.py": {
+      "sha256": "2a2796e6bd5a5a1dab5f7cdc0489704458d36961d2766cf0cb2865cc253b469e",
+      "unchanged": true
+    },
+    "drawing_cad\\geometry.py": {
+      "sha256": "bb99418e48237499dce179ffd3b1fef9afc6fae6dddc833c1389e0be8d71e6ba",
+      "unchanged": true
+    },
+    "drawing_cad\\ingest.py": {
+      "sha256": "0c23e47c5372a7cee71a1b9949d26c895322ac245916f65ece8be9c5594bcca8",
+      "unchanged": true
+    },
+    "drawing_cad\\leader_dimensions.py": {
+      "sha256": "50fb38363410c8737909b0932a140306ad6716cc7d0d110843323c932ea55df7",
+      "unchanged": true
+    },
+    "drawing_cad\\ocr.py": {
+      "sha256": "f5c7c9add2ecd9d5bfea57dfa162d22cf09f6224e6341ce8ff2eedc5e861e2ea",
+      "unchanged": true
+    },
+    "drawing_cad\\pattern_cad.py": {
+      "sha256": "d85213c606e7f4874d00c11418b983b6efba10690c2def3face291f7e02f91d9",
+      "unchanged": true
+    },
+    "drawing_cad\\pattern_constraints.py": {
+      "sha256": "e6d5e8989a982e31bc150567793ec3e02d2ea0e6c8c3943eca2f5f81862631e1",
+      "unchanged": true
+    },
+    "drawing_cad\\pattern_features.py": {
+      "sha256": "1de8fe17915de3bd577108bf776c7adec5802dca9dc86d40027949b734ec1da4",
+      "unchanged": true
+    },
+    "drawing_cad\\pattern_geometry.py": {
+      "sha256": "201f55bbb36b6af61217e578664cdca8f9ad743be35a4a67f55783e8a74a8e59",
+      "unchanged": true
+    },
+    "drawing_cad\\pipeline.py": {
+      "sha256": "9568a4e10ad1c09d0e0bebd8730cfa4b430d8a3ff5ecb53e23316ca9d22a4abc",
+      "unchanged": true
+    },
+    "drawing_cad\\preprocess.py": {
+      "sha256": "4e56d8e8241c6e446cd510dc05383775c5f11238404cc950cbe83ed97b32d46f",
+      "unchanged": true
+    },
+    "drawing_cad\\preview.py": {
+      "sha256": "9824eb5f9832cea48bd3c68a03588bf7e0e13f3cefb2a13233e504da57e9e05f",
+      "unchanged": true
+    },
+    "drawing_cad\\profile_cad.py": {
+      "sha256": "47764e36ca2feb8276e1f863744a8d893ce2b40c8ede812766e0e0a800c0891e",
+      "unchanged": true
+    },
+    "drawing_cad\\profile_features.py": {
+      "sha256": "5d0705d9f7b18d9c87e37a7ceb614d7e34887999a8047b766f12f88ec02b84a3",
+      "unchanged": true
+    },
+    "drawing_cad\\profile_geometry.py": {
+      "sha256": "84980835a84d5e0ede6e91aed5c7d15b3cf61d63c83e10a07e068735f8a61347",
+      "unchanged": true
+    },
+    "drawing_cad\\slot_inference.py": {
+      "sha256": "20b7aa51f39f9a22424220827a7c8163e561ff52e54d3de02a0eb760786fbc34",
+      "unchanged": true
+    },
+    "drawing_cad\\types.py": {
+      "sha256": "3be47745b39c0e9f8521b8f21f50f9e79cb59f1f1c7d1d124f6f3034ec8afacc",
+      "unchanged": true
+    },
+    "drawing_cad\\__init__.py": {
+      "sha256": "4337ae6200e18f81aede63d64bf32140e6f0ebb555733a29b86b389056c5ebdf",
+      "unchanged": true
+    },
+    "cad_mujoco\\cli.py": {
+      "sha256": "80e4fc01d6897d85d15b2f90534fd41846acf617bc2aec49db8d6ef2fa23d485",
+      "unchanged": true
+    },
+    "cad_mujoco\\mesh.py": {
+      "sha256": "286c0c13907e8fdb9592edd8d2e28a01be8c41db7463c55add6fe291e697495e",
+      "unchanged": true
+    },
+    "cad_mujoco\\metadata.py": {
+      "sha256": "ba38868cc222ff3259cbff3d330191cfc15893e5a6f4717b5fc074d9038a61e6",
+      "unchanged": true
+    },
+    "cad_mujoco\\mjcf.py": {
+      "sha256": "df3aa2850ac42aa654b32f92dd0fffeff919bd2e94eb21593066ed9bb6ee8904",
+      "unchanged": true
+    },
+    "cad_mujoco\\pipeline.py": {
+      "sha256": "d2f894b6dd47f12c78e84cae84b2f4b3f8974e884956cea50553215977eb3305",
+      "unchanged": true
+    },
+    "cad_mujoco\\validation.py": {
+      "sha256": "8cf7a3eda6fb9a670b833f38680a8b6b4b580c7bd0e6e9a922d19fc75cc0c171",
+      "unchanged": true
+    },
+    "cad_mujoco\\__init__.py": {
+      "sha256": "e9789285e1d662aa2f8b335a1695f48967124145309d4938d2331dd4a47f7dd3",
+      "unchanged": true
+    },
+    "manipulation\\geometry.py": {
+      "sha256": "d4088592737ab166748ad68cb9e673519d693ee0519da498324cfd1002277709",
+      "unchanged": true
+    },
+    "manipulation\\panda.py": {
+      "sha256": "e61bd1703813550b60c79ea6054728f6a53e66892bf0d5d7d69c896f5b5a1d9c",
+      "unchanged": true
+    },
+    "manipulation\\pipeline.py": {
+      "sha256": "213dd9896cb3a8ec6bc3ca4c96e75875fe92977cc4faee344e4cd51bbe497d5c",
+      "unchanged": true
+    },
+    "manipulation\\__init__.py": {
+      "sha256": "2502f45abe45c1e4eb0cfffcbebfc337ec86dd9919c1b1586fb32330c17eda0d",
+      "unchanged": true
+    },
+    "panda_grasp.py": {
+      "sha256": "c991b8a18aa2fc03767c9514c04255a91f005c1ef086826b2356394fd208bb0c",
+      "unchanged": true
+    },
+    "pick_and_place.py": {
+      "sha256": "615152a02bc180f10f1571d50adccd9c3805fee1d17a17186c9f63b1970efb4b",
+      "unchanged": true
+    },
+    "cad2mujoco.py": {
+      "sha256": "f498c736ba13da2cda0211405232c2e6bb507cde82ca8ea4b322cc441363a5a5",
+      "unchanged": true
+    },
+    "drawing2cad.py": {
+      "sha256": "2284737c06822d8b53f7f4d84103b546ea375f9c29ccd08c014767a3ff01a562",
+      "unchanged": true
+    }
+  },
+  "algorithm": "Calibrated RGB-D unprojection, RANSAC broad face, minimum-area rectangular exterior, known CAD triangle silhouette pose hypotheses",
+  "isolation": {
+    "target_pose_control_source": "vision only",
+    "ground_truth_fallback": false,
+    "planning_state": "robot joint encoders + estimated target freejoint transform",
+    "ground_truth_use": "archived state decoded after attempt for pose and hold evaluation",
+    "remaining_simulator_telemetry": "original contact/velocity/numerical guards",
+    "policy": "one snapshot after settling; static object during approach/descend; no visual tracking"
+  },
+  "positive_metrics": {
+    "vision_grasps_passed": 5,
+    "maximum_position_error_m": 0.00026823180985350876,
+    "maximum_raw_rotation_error_deg": 179.92446377810847,
+    "maximum_symmetry_aware_rotation_error_deg": 0.0755402713483806,
+    "minimum_hold_clearance_m": 0.11968304686859352,
+    "minimum_hold_bilateral_fraction": 1.0,
+    "minimum_hold_duration_s": 1.9899999999953621
+  },
+  "cases": [
+    {
+      "fixture": "small",
+      "cad_drop_success": false,
+      "cad_drop_checks": {
+        "started_above_table": true,
+        "no_initial_part_overlap": true,
+        "no_other_object_contacts": true,
+        "fell_under_gravity": true,
+        "table_contact": true,
+        "sustained_table_contact": true,
+        "settled_linear_speed": false,
+        "settled_angular_speed": true,
+        "stable_height": true,
+        "no_excess_penetration": true,
+        "resting_on_table": true,
+        "no_numerical_warnings": true
+      },
+      "tail_speed_m_s": 0.00238618351090121
+    },
+    {
+      "fixture": "large",
+      "cad_drop_success": false,
+      "cad_drop_checks": {
+        "started_above_table": true,
+        "no_initial_part_overlap": true,
+        "no_other_object_contacts": true,
+        "fell_under_gravity": true,
+        "table_contact": true,
+        "sustained_table_contact": true,
+        "settled_linear_speed": false,
+        "settled_angular_speed": true,
+        "stable_height": true,
+        "no_excess_penetration": true,
+        "resting_on_table": true,
+        "no_numerical_warnings": true
+      },
+      "tail_speed_m_s": 0.002437000557256544
+    },
+    {
+      "test": "test_perception.RenderedTests.test_exported_cad_vision_grasp",
+      "case": "exported",
+      "xy": [
+        0,
+        0
+      ],
+      "yaw_degrees": 0,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "fixed RGB-D + segmentation + known CAD; world metres / wxyz",
+        "source_scene": "fixture/exported",
+        "source_scene_sha256": "89950f07ec9ea4503c0740a57c8ab1ec45c486909d5c34ea73c93a62ba44ae0f",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04993768118920311,
+            -0.012562320453709697,
+            -0.0030000000260770442
+          ],
+          [
+            0.05006232030091341,
+            0.01243767898749686,
+            0.0030000000260770442
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.5000003452384993,
+            -0.00011618007225095808,
+            0.13299951065815396
+          ],
+          "quaternion_wxyz": [
+            0.9999999997093885,
+            -2.404055882206703e-05,
+            1.5630549734010103e-06,
+            9.118380962403837e-07
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4999559363512462,
+            -0.00010309588790400897,
+            0.2527422673412294
+          ],
+          "quaternion_wxyz": [
+            0.9999999903929506,
+            -2.4942113543815723e-05,
+            0.00013567482101278569,
+            1.357694868996078e-05
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11972480205088007,
+        "maximum_hold_speed_m_s": 0.00019144500196807378,
+        "maximum_relative_slip_m": 1.3130309144493145e-05,
+        "maximum_relative_rotation_rad": 1.897792014028866e-05,
+        "max_ik_position_error_m": 0.0001498177800226144,
+        "max_ik_orientation_error_rad": 0.0007993894528831169,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied.",
+          "Single observation after settling; target assumed static during approach/descend. No visual tracking during lift.",
+          "Known metric mesh, calibrated fixed camera, simulator instance segmentation (not learned detection).",
+          "Rectangular exterior plate with visible broad face; reject insufficient pixels, clipping, extent or silhouette mismatch.",
+          "Symmetric objects yield multiple pose hypotheses. Raw and CAD-symmetry-aware errors reported separately.",
+          "Simulation contact/velocity guards remain; this is pose perception, not a fully sensor-only robot controller."
+        ],
+        "pose_evaluation": {
+          "position_error_m": 0.00011613634488215395,
+          "rotation_error_deg": 0.0008679844682849062,
+          "symmetry_aware_rotation_error_deg": 0.0008679844682849062,
+          "verified_mesh_symmetry_count": 1,
+          "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+          "ground_truth": {
+            "position_m": [
+              0.5000038578098871,
+              -9.687020531410345e-08,
+              0.13299956211359817
+            ],
+            "quaternion_wxyz": [
+              0.9999999998453997,
+              -1.7141715042391153e-05,
+              5.711570554303383e-07,
+              3.8777373512137985e-06
+            ]
+          },
+          "evaluation_only": true
+        },
+        "final_object_pose_source": "offline simulator evaluation only",
+        "pose_source": "vision",
+        "ground_truth_fallback": false,
+        "estimated_pose": {
+          "position_m": [
+            0.5000003452384993,
+            -0.00011618007225095808,
+            0.13299951065815396
+          ],
+          "quaternion_wxyz": [
+            0.9999999997093885,
+            -2.404055882206703e-05,
+            1.5630549734010103e-06,
+            9.118380962403837e-07
+          ],
+          "source": "RGB-D + known CAD mesh",
+          "unit": "m",
+          "frame": "world",
+          "quaternion_order": "wxyz",
+          "diagnostics": {
+            "algorithm": "RANSAC plane + minimum-area exterior rectangle + CAD triangle silhouette registration",
+            "segmented_pixels": 3464,
+            "point_count": 3464,
+            "plane_point_count": 2753,
+            "relative_extent_error": [
+              0.0004169425958244929,
+              0.03747319095496051
+            ],
+            "silhouette_iou": 0.9376186601573094,
+            "orientation_ambiguous": true,
+            "plausible_hypothesis_count": 4,
+            "ambiguity": "indistinguishable broad-face/yaw hypotheses retained; canonical representative returned",
+            "capture_time_s": 2.0000000000002514,
+            "position_uncertainty_scale_m": 0.0007961717891251682,
+            "visibility_requirement": "dominant broad face and near-complete rectangular exterior",
+            "pose_observation": "one RGB-D frame; no target body pose, qpos or ground-truth seed"
+          },
+          "hypotheses": [
+            {
+              "position_m": [
+                0.5000003452384993,
+                -0.00011618007225095808,
+                0.13299951065815396
+              ],
+              "quaternion_wxyz": [
+                0.9999999997093885,
+                -2.404055882206703e-05,
+                1.5630549734010103e-06,
+                9.118380962403837e-07
+              ],
+              "silhouette_iou": 0.9376186601573094
+            },
+            {
+              "position_m": [
+                0.5001249845775239,
+                -0.00024082131102750202,
+                0.13299951626141357
+              ],
+              "quaternion_wxyz": [
+                -9.118380962403837e-07,
+                1.5630549734010103e-06,
+                2.404055882206703e-05,
+                0.9999999997093885
+              ],
+              "silhouette_iou": 0.9313142239048134
+            },
+            {
+              "position_m": [
+                0.5000003454658144,
+                -0.00024082153831951557,
+                0.1329995166510546
+              ],
+              "quaternion_wxyz": [
+                2.404055882206703e-05,
+                0.9999999997093885,
+                9.118380962403837e-07,
+                -1.5630549734010103e-06
+              ],
+              "silhouette_iou": 0.9328641039523552
+            },
+            {
+              "position_m": [
+                0.5001249843502088,
+                -0.00011617984495894453,
+                0.13299951026851292
+              ],
+              "quaternion_wxyz": [
+                -1.5630549734010103e-06,
+                -9.118380962403837e-07,
+                0.9999999997093885,
+                -2.404055882206703e-05
+              ],
+              "silhouette_iou": 0.934470620092066
+            }
+          ]
+        },
+        "success_evaluation": "offline simulator trajectory, contact telemetry and unchanged hold checks"
+      }
+    },
+    {
+      "test": "test_perception.RenderedTests.test_larger_plate_xy_yaw_grasp",
+      "case": "large",
+      "xy": [
+        0.021,
+        0.038
+      ],
+      "yaw_degrees": 104,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "fixed RGB-D + segmentation + known CAD; world metres / wxyz",
+        "source_scene": "fixture/large",
+        "source_scene_sha256": "edc227e66d4d64a5eb2ae5d28e063f60ea3c0ededff7766a6dc03e618e58eac9",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.06150000169873262,
+            -0.026000000536441907,
+            -0.005499999970197699
+          ],
+          [
+            0.06150000169873262,
+            0.026000000536441907,
+            0.005499999970197699
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.5209344470655207,
+            0.03793079029652695,
+            0.13549939265983985
+          ],
+          "quaternion_wxyz": [
+            0.7875916613680125,
+            -7.923210783827597e-06,
+            7.4097216831514965e-06,
+            -0.6161975128365033
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.5208471842285199,
+            0.037983843944244436,
+            0.2551993206493118
+          ],
+          "quaternion_wxyz": [
+            0.6161609725719465,
+            7.494587520170567e-05,
+            0.00016695116012334078,
+            0.7876202272603343
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11968304686859352,
+        "maximum_hold_speed_m_s": 0.00018767579573785825,
+        "maximum_relative_slip_m": 1.4474137000742398e-05,
+        "maximum_relative_rotation_rad": 2.2574821180716326e-05,
+        "max_ik_position_error_m": 0.00014981352120988154,
+        "max_ik_orientation_error_rad": 0.0001236860667173671,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied.",
+          "Single observation after settling; target assumed static during approach/descend. No visual tracking during lift.",
+          "Known metric mesh, calibrated fixed camera, simulator instance segmentation (not learned detection).",
+          "Rectangular exterior plate with visible broad face; reject insufficient pixels, clipping, extent or silhouette mismatch.",
+          "Symmetric objects yield multiple pose hypotheses. Raw and CAD-symmetry-aware errors reported separately.",
+          "Simulation contact/velocity guards remain; this is pose perception, not a fully sensor-only robot controller."
+        ],
+        "pose_evaluation": {
+          "position_error_m": 9.516304947378379e-05,
+          "rotation_error_deg": 179.92446377810847,
+          "symmetry_aware_rotation_error_deg": 0.0755402713483806,
+          "verified_mesh_symmetry_count": 4,
+          "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+          "ground_truth": {
+            "position_m": [
+              0.5209993776812248,
+              0.03800036037143671,
+              0.1354995533038061
+            ],
+            "quaternion_wxyz": [
+              0.6156782159937829,
+              1.0535018713181382e-06,
+              5.44413929935043e-06,
+              0.7879976740574576
+            ]
+          },
+          "evaluation_only": true
+        },
+        "final_object_pose_source": "offline simulator evaluation only",
+        "pose_source": "vision",
+        "ground_truth_fallback": false,
+        "estimated_pose": {
+          "position_m": [
+            0.5209344470655207,
+            0.03793079029652695,
+            0.13549939265983985
+          ],
+          "quaternion_wxyz": [
+            0.7875916613680125,
+            -7.923210783827597e-06,
+            7.4097216831514965e-06,
+            -0.6161975128365033
+          ],
+          "source": "RGB-D + known CAD mesh",
+          "unit": "m",
+          "frame": "world",
+          "quaternion_order": "wxyz",
+          "diagnostics": {
+            "algorithm": "RANSAC plane + minimum-area exterior rectangle + CAD triangle silhouette registration",
+            "segmented_pixels": 8815,
+            "point_count": 8815,
+            "plane_point_count": 8139,
+            "relative_extent_error": [
+              0.00040608366411361415,
+              0.0013828789942116227
+            ],
+            "silhouette_iou": 0.9805057368831458,
+            "orientation_ambiguous": true,
+            "plausible_hypothesis_count": 4,
+            "ambiguity": "indistinguishable broad-face/yaw hypotheses retained; canonical representative returned",
+            "capture_time_s": 2.0000000000002514,
+            "position_uncertainty_scale_m": 0.0008096942974149731,
+            "visibility_requirement": "dominant broad face and near-complete rectangular exterior",
+            "pose_observation": "one RGB-D frame; no target body pose, qpos or ground-truth seed"
+          },
+          "hypotheses": [
+            {
+              "position_m": [
+                0.5209344470655207,
+                0.03793079029652695,
+                0.13549939265983985
+              ],
+              "quaternion_wxyz": [
+                0.7875916613680125,
+                -7.923210783827597e-06,
+                7.4097216831514965e-06,
+                -0.6161975128365033
+              ],
+              "silhouette_iou": 0.9805057368831458
+            },
+            {
+              "position_m": [
+                0.5209344470655207,
+                0.03793079029652695,
+                0.13549939265983985
+              ],
+              "quaternion_wxyz": [
+                0.6161975128365033,
+                7.409721683151496e-06,
+                7.923210783827597e-06,
+                0.7875916613680125
+              ],
+              "silhouette_iou": 0.9805057368831458
+            },
+            {
+              "position_m": [
+                0.5209344470655207,
+                0.03793079029652695,
+                0.13549939265983985
+              ],
+              "quaternion_wxyz": [
+                7.923210783827597e-06,
+                0.7875916613680125,
+                -0.6161975128365033,
+                -7.4097216831514965e-06
+              ],
+              "silhouette_iou": 0.9805057368831458
+            },
+            {
+              "position_m": [
+                0.5209344470655207,
+                0.03793079029652695,
+                0.13549939265983985
+              ],
+              "quaternion_wxyz": [
+                -7.4097216831514965e-06,
+                0.6161975128365033,
+                0.7875916613680125,
+                -7.923210783827597e-06
+              ],
+              "silhouette_iou": 0.9805057368831458
+            }
+          ]
+        },
+        "success_evaluation": "offline simulator trajectory, contact telemetry and unchanged hold checks"
+      }
+    },
+    {
+      "test": "test_perception.RenderedTests.test_open_gripper_negative_control",
+      "case": "small",
+      "xy": [
+        0,
+        0
+      ],
+      "yaw_degrees": 0,
+      "result": {
+        "success": false,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": false,
+          "lifted_clear_of_table": false,
+          "no_table_contact_during_hold": false,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": {
+          "stage": "evaluation",
+          "reason": "grasp_checks_failed",
+          "failed_checks": [
+            "sustained_bilateral_contact",
+            "lifted_clear_of_table",
+            "no_table_contact_during_hold"
+          ]
+        },
+        "observation_source": "fixed RGB-D + segmentation + known CAD; world metres / wxyz",
+        "source_scene": "fixture/small",
+        "source_scene_sha256": "35043387bfc8eb61f248bb564ad9cf4a21bb38b94ec97f9fa14b0b78c2ee36cb",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.045499999076128186,
+            -0.017000000923872063,
+            -0.004000000189989821
+          ],
+          [
+            0.045499999076128186,
+            0.017000000923872063,
+            0.004000000189989821
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.5000000056818483,
+            -0.0003448559810685607,
+            0.1339989788095985
+          ],
+          "quaternion_wxyz": [
+            0.9999999999899575,
+            2.2806292277132755e-06,
+            3.857965481409209e-06,
+            8.798527604159165e-12
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.5000042110382761,
+            3.2519525456207726e-07,
+            0.13399780307367795
+          ],
+          "quaternion_wxyz": [
+            0.9999999999967166,
+            1.8503108317033451e-06,
+            2.56394632742673e-07,
+            -1.754318504623722e-06
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": false,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 0.0,
+        "minimum_hold_table_clearance_m": -2.5107385166756035e-06,
+        "maximum_hold_speed_m_s": 0.000523302374730019,
+        "maximum_relative_slip_m": 1.9137577458939552e-05,
+        "maximum_relative_rotation_rad": 1.558148647123104e-05,
+        "max_ik_position_error_m": 0.0001498173719689351,
+        "max_ik_orientation_error_rad": 0.0007993886401627577,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied.",
+          "Single observation after settling; target assumed static during approach/descend. No visual tracking during lift.",
+          "Known metric mesh, calibrated fixed camera, simulator instance segmentation (not learned detection).",
+          "Rectangular exterior plate with visible broad face; reject insufficient pixels, clipping, extent or silhouette mismatch.",
+          "Symmetric objects yield multiple pose hypotheses. Raw and CAD-symmetry-aware errors reported separately.",
+          "Simulation contact/velocity guards remain; this is pose perception, not a fully sensor-only robot controller."
+        ],
+        "pose_evaluation": {
+          "position_error_m": 0.0003452077116160009,
+          "rotation_error_deg": 0.00046152460253410464,
+          "symmetry_aware_rotation_error_deg": 0.00046152460253410464,
+          "verified_mesh_symmetry_count": 4,
+          "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+          "ground_truth": {
+            "position_m": [
+              0.500004210909982,
+              3.2611520614206266e-07,
+              0.13399895377160112
+            ],
+            "quaternion_wxyz": [
+              0.9999999999968371,
+              1.7819531041061086e-06,
+              2.6727192837456775e-07,
+              -1.7548408148248565e-06
+            ]
+          },
+          "evaluation_only": true
+        },
+        "final_object_pose_source": "offline simulator evaluation only",
+        "pose_source": "vision",
+        "ground_truth_fallback": false,
+        "estimated_pose": {
+          "position_m": [
+            0.5000000056818483,
+            -0.0003448559810685607,
+            0.1339989788095985
+          ],
+          "quaternion_wxyz": [
+            0.9999999999899575,
+            2.2806292277132755e-06,
+            3.857965481409209e-06,
+            8.798527604159165e-12
+          ],
+          "source": "RGB-D + known CAD mesh",
+          "unit": "m",
+          "frame": "world",
+          "quaternion_order": "wxyz",
+          "diagnostics": {
+            "algorithm": "RANSAC plane + minimum-area exterior rectangle + CAD triangle silhouette registration",
+            "segmented_pixels": 4702,
+            "point_count": 4702,
+            "plane_point_count": 4240,
+            "relative_extent_error": [
+              9.1112250071717e-05,
+              0.021832567775961757
+            ],
+            "silhouette_iou": 0.9424619085805934,
+            "orientation_ambiguous": true,
+            "plausible_hypothesis_count": 4,
+            "ambiguity": "indistinguishable broad-face/yaw hypotheses retained; canonical representative returned",
+            "capture_time_s": 2.0000000000002514,
+            "position_uncertainty_scale_m": 0.0007941957129299743,
+            "visibility_requirement": "dominant broad face and near-complete rectangular exterior",
+            "pose_observation": "one RGB-D frame; no target body pose, qpos or ground-truth seed"
+          },
+          "hypotheses": [
+            {
+              "position_m": [
+                0.5000000056818483,
+                -0.0003448559810685607,
+                0.1339989788095985
+              ],
+              "quaternion_wxyz": [
+                0.9999999999899575,
+                2.2806292277132755e-06,
+                3.857965481409209e-06,
+                8.798527604159165e-12
+              ],
+              "silhouette_iou": 0.9424619085805934
+            },
+            {
+              "position_m": [
+                0.5000000056818483,
+                -0.0003448559810685607,
+                0.1339989788095985
+              ],
+              "quaternion_wxyz": [
+                -8.798527604159165e-12,
+                3.857965481409209e-06,
+                -2.2806292277132755e-06,
+                0.9999999999899575
+              ],
+              "silhouette_iou": 0.9424619085805934
+            },
+            {
+              "position_m": [
+                0.5000000056818483,
+                -0.0003448559810685607,
+                0.1339989788095985
+              ],
+              "quaternion_wxyz": [
+                -3.857965481409209e-06,
+                -8.798527604159165e-12,
+                0.9999999999899575,
+                2.2806292277132755e-06
+              ],
+              "silhouette_iou": 0.9424619085805934
+            },
+            {
+              "position_m": [
+                0.5000000056818483,
+                -0.0003448559810685607,
+                0.1339989788095985
+              ],
+              "quaternion_wxyz": [
+                -2.2806292277132755e-06,
+                0.9999999999899575,
+                8.798527604159165e-12,
+                -3.857965481409209e-06
+              ],
+              "silhouette_iou": 0.9424619085805934
+            }
+          ]
+        },
+        "success_evaluation": "offline simulator trajectory, contact telemetry and unchanged hold checks"
+      }
+    },
+    {
+      "test": "test_perception.RenderedTests.test_rendered_depth_and_six_dof_registration",
+      "pose_evaluation": {
+        "position_error_m": 1.788959340448721e-06,
+        "rotation_error_deg": 0.0013175397554538492,
+        "symmetry_aware_rotation_error_deg": 0.0013175397554538492,
+        "verified_mesh_symmetry_count": 4,
+        "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+        "ground_truth": {
+          "position_m": [
+            0.457,
+            -0.067,
+            0.284
+          ],
+          "quaternion_wxyz": [
+            0.9706201795577123,
+            0.05830719620714331,
+            0.013998319310851813,
+            0.23302528824633498
+          ]
+        },
+        "evaluation_only": true
+      }
+    },
+    {
+      "test": "test_perception.RenderedTests.test_smaller_plate_xy_yaw_grasp",
+      "case": "small",
+      "xy": [
+        -0.029,
+        -0.046
+      ],
+      "yaw_degrees": -31,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "fixed RGB-D + segmentation + known CAD; world metres / wxyz",
+        "source_scene": "fixture/small",
+        "source_scene_sha256": "35043387bfc8eb61f248bb564ad9cf4a21bb38b94ec97f9fa14b0b78c2ee36cb",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.045499999076128186,
+            -0.017000000923872063,
+            -0.004000000189989821
+          ],
+          [
+            0.045499999076128186,
+            0.017000000923872063,
+            0.004000000189989821
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.470999250466216,
+            -0.046004326873420376,
+            0.1339994963874347
+          ],
+          "quaternion_wxyz": [
+            0.9636349328876425,
+            -1.31185672702328e-05,
+            1.8270073220724892e-08,
+            -0.267222222029777
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4709596072596482,
+            -0.04600972483796272,
+            0.2537661149461843
+          ],
+          "quaternion_wxyz": [
+            0.9636350296419025,
+            -3.733828006333366e-05,
+            0.00010888033904992317,
+            -0.26722184865383586
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.1197506468826949,
+        "maximum_hold_speed_m_s": 0.0001949708995161159,
+        "maximum_relative_slip_m": 1.2594443740397568e-05,
+        "maximum_relative_rotation_rad": 1.2962983410969278e-05,
+        "max_ik_position_error_m": 0.0001496762411814798,
+        "max_ik_orientation_error_rad": 0.0005172762996222364,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied.",
+          "Single observation after settling; target assumed static during approach/descend. No visual tracking during lift.",
+          "Known metric mesh, calibrated fixed camera, simulator instance segmentation (not learned detection).",
+          "Rectangular exterior plate with visible broad face; reject insufficient pixels, clipping, extent or silhouette mismatch.",
+          "Symmetric objects yield multiple pose hypotheses. Raw and CAD-symmetry-aware errors reported separately.",
+          "Simulation contact/velocity guards remain; this is pose perception, not a fully sensor-only robot controller."
+        ],
+        "pose_evaluation": {
+          "position_error_m": 4.530136631878598e-06,
+          "rotation_error_deg": 0.0006214151363181748,
+          "symmetry_aware_rotation_error_deg": 0.0006214151363181748,
+          "verified_mesh_symmetry_count": 4,
+          "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+          "ground_truth": {
+            "position_m": [
+              0.4710002311112768,
+              -0.04599990474904177,
+              0.13399956911396554
+            ],
+            "quaternion_wxyz": [
+              0.9636343270056458,
+              -8.266226966136156e-06,
+              -8.306761845014955e-07,
+              -0.2672244070951497
+            ]
+          },
+          "evaluation_only": true
+        },
+        "final_object_pose_source": "offline simulator evaluation only",
+        "pose_source": "vision",
+        "ground_truth_fallback": false,
+        "estimated_pose": {
+          "position_m": [
+            0.470999250466216,
+            -0.046004326873420376,
+            0.1339994963874347
+          ],
+          "quaternion_wxyz": [
+            0.9636349328876425,
+            -1.31185672702328e-05,
+            1.8270073220724892e-08,
+            -0.267222222029777
+          ],
+          "source": "RGB-D + known CAD mesh",
+          "unit": "m",
+          "frame": "world",
+          "quaternion_order": "wxyz",
+          "diagnostics": {
+            "algorithm": "RANSAC plane + minimum-area exterior rectangle + CAD triangle silhouette registration",
+            "segmented_pixels": 5165,
+            "point_count": 5165,
+            "plane_point_count": 4636,
+            "relative_extent_error": [
+              6.273786744131978e-05,
+              0.00023975465422122316
+            ],
+            "silhouette_iou": 0.9856404365307294,
+            "orientation_ambiguous": true,
+            "plausible_hypothesis_count": 4,
+            "ambiguity": "indistinguishable broad-face/yaw hypotheses retained; canonical representative returned",
+            "capture_time_s": 2.0000000000002514,
+            "position_uncertainty_scale_m": 0.0007696876522709727,
+            "visibility_requirement": "dominant broad face and near-complete rectangular exterior",
+            "pose_observation": "one RGB-D frame; no target body pose, qpos or ground-truth seed"
+          },
+          "hypotheses": [
+            {
+              "position_m": [
+                0.470999250466216,
+                -0.046004326873420376,
+                0.1339994963874347
+              ],
+              "quaternion_wxyz": [
+                0.9636349328876425,
+                -1.31185672702328e-05,
+                1.8270073220724892e-08,
+                -0.267222222029777
+              ],
+              "silhouette_iou": 0.9856404365307294
+            },
+            {
+              "position_m": [
+                0.470999250466216,
+                -0.046004326873420376,
+                0.1339994963874347
+              ],
+              "quaternion_wxyz": [
+                0.267222222029777,
+                1.8270073220724892e-08,
+                1.31185672702328e-05,
+                0.9636349328876425
+              ],
+              "silhouette_iou": 0.9856404365307294
+            },
+            {
+              "position_m": [
+                0.470999250466216,
+                -0.046004326873420376,
+                0.1339994963874347
+              ],
+              "quaternion_wxyz": [
+                1.31185672702328e-05,
+                0.9636349328876425,
+                -0.267222222029777,
+                -1.8270073220724892e-08
+              ],
+              "silhouette_iou": 0.9856404365307294
+            },
+            {
+              "position_m": [
+                0.470999250466216,
+                -0.046004326873420376,
+                0.1339994963874347
+              ],
+              "quaternion_wxyz": [
+                -1.8270073220724892e-08,
+                0.267222222029777,
+                0.9636349328876425,
+                -1.31185672702328e-05
+              ],
+              "silhouette_iou": 0.9856404365307294
+            }
+          ]
+        },
+        "success_evaluation": "offline simulator trajectory, contact telemetry and unchanged hold checks"
+      }
+    },
+    {
+      "test": "test_perception.RenderedTests.test_translation_vision_grasp",
+      "case": "exported",
+      "xy": [
+        -0.058,
+        0.074
+      ],
+      "yaw_degrees": 0,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "fixed RGB-D + segmentation + known CAD; world metres / wxyz",
+        "source_scene": "fixture/exported",
+        "source_scene_sha256": "89950f07ec9ea4503c0740a57c8ab1ec45c486909d5c34ea73c93a62ba44ae0f",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04993768118920311,
+            -0.012562320453709697,
+            -0.0030000000260770442
+          ],
+          [
+            0.05006232030091341,
+            0.01243767898749686,
+            0.0030000000260770442
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.4420196435575666,
+            0.07373074941450382,
+            0.13299797622512846
+          ],
+          "quaternion_wxyz": [
+            0.9999999950175018,
+            9.982358928943798e-05,
+            4.974407232621517e-07,
+            4.9656318702174545e-11
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4419724425580497,
+            0.0737594804366033,
+            0.2527610808698824
+          ],
+          "quaternion_wxyz": [
+            0.9999999915119895,
+            8.506076127871662e-05,
+            9.090635367966672e-05,
+            3.842816431013311e-05
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11974543076752739,
+        "maximum_hold_speed_m_s": 0.0001969765508936791,
+        "maximum_relative_slip_m": 1.3130847104328816e-05,
+        "maximum_relative_rotation_rad": 1.1032818288397922e-05,
+        "max_ik_position_error_m": 0.00014977342784468716,
+        "max_ik_orientation_error_rad": 0.0007166568270929137,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied.",
+          "Single observation after settling; target assumed static during approach/descend. No visual tracking during lift.",
+          "Known metric mesh, calibrated fixed camera, simulator instance segmentation (not learned detection).",
+          "Rectangular exterior plate with visible broad face; reject insufficient pixels, clipping, extent or silhouette mismatch.",
+          "Symmetric objects yield multiple pose hypotheses. Raw and CAD-symmetry-aware errors reported separately.",
+          "Simulation contact/velocity guards remain; this is pose perception, not a fully sensor-only robot controller."
+        ],
+        "pose_evaluation": {
+          "position_error_m": 0.00026823180985350876,
+          "rotation_error_deg": 0.013405736689591925,
+          "symmetry_aware_rotation_error_deg": 0.013405736689591925,
+          "verified_mesh_symmetry_count": 1,
+          "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+          "ground_truth": {
+            "position_m": [
+              0.44200053544904194,
+              0.07399829576879069,
+              0.1329994364695265
+            ],
+            "quaternion_wxyz": [
+              0.9999999998149419,
+              -1.678943366406874e-05,
+              1.095602521451694e-06,
+              -9.32903080832922e-06
+            ]
+          },
+          "evaluation_only": true
+        },
+        "final_object_pose_source": "offline simulator evaluation only",
+        "pose_source": "vision",
+        "ground_truth_fallback": false,
+        "estimated_pose": {
+          "position_m": [
+            0.4420196435575666,
+            0.07373074941450382,
+            0.13299797622512846
+          ],
+          "quaternion_wxyz": [
+            0.9999999950175018,
+            9.982358928943798e-05,
+            4.974407232621517e-07,
+            4.9656318702174545e-11
+          ],
+          "source": "RGB-D + known CAD mesh",
+          "unit": "m",
+          "frame": "world",
+          "quaternion_order": "wxyz",
+          "diagnostics": {
+            "algorithm": "RANSAC plane + minimum-area exterior rectangle + CAD triangle silhouette registration",
+            "segmented_pixels": 3131,
+            "point_count": 3131,
+            "plane_point_count": 2400,
+            "relative_extent_error": [
+              0.0004426092360297871,
+              0.02148477040554137
+            ],
+            "silhouette_iou": 0.9340692124105012,
+            "orientation_ambiguous": true,
+            "plausible_hypothesis_count": 4,
+            "ambiguity": "indistinguishable broad-face/yaw hypotheses retained; canonical representative returned",
+            "capture_time_s": 2.0000000000002514,
+            "position_uncertainty_scale_m": 0.0008358311655077335,
+            "visibility_requirement": "dominant broad face and near-complete rectangular exterior",
+            "pose_observation": "one RGB-D frame; no target body pose, qpos or ground-truth seed"
+          },
+          "hypotheses": [
+            {
+              "position_m": [
+                0.4420196435575666,
+                0.07373074941450382,
+                0.13299797622512846
+              ],
+              "quaternion_wxyz": [
+                0.9999999950175018,
+                9.982358928943798e-05,
+                4.974407232621517e-07,
+                4.9656318702174545e-11
+              ],
+              "silhouette_iou": 0.9340692124105012
+            },
+            {
+              "position_m": [
+                0.44214428266927686,
+                0.07360610795079978,
+                0.1329979512168104
+              ],
+              "quaternion_wxyz": [
+                -4.9656318702174545e-11,
+                4.974407232621517e-07,
+                -9.982358928943798e-05,
+                0.9999999950175018
+              ],
+              "silhouette_iou": 0.9305927911826035
+            },
+            {
+              "position_m": [
+                0.4420196435575666,
+                0.07360610795077502,
+                0.13299795134081155
+              ],
+              "quaternion_wxyz": [
+                -9.982358928943798e-05,
+                0.9999999950175018,
+                4.9656318702174545e-11,
+                -4.974407232621517e-07
+              ],
+              "silhouette_iou": 0.930911256700417
+            },
+            {
+              "position_m": [
+                0.44214428266927686,
+                0.07373074941452858,
+                0.13299797610112735
+              ],
+              "quaternion_wxyz": [
+                -4.974407232621517e-07,
+                -4.9656318702174545e-11,
+                0.9999999950175018,
+                9.982358928943798e-05
+              ],
+              "silhouette_iou": 0.9325976737250223
+            }
+          ]
+        },
+        "success_evaluation": "offline simulator trajectory, contact telemetry and unchanged hold checks"
+      }
+    },
+    {
+      "test": "test_perception.RenderedTests.test_yaw_vision_grasp",
+      "case": "exported",
+      "xy": [
+        0,
+        0
+      ],
+      "yaw_degrees": 53,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "fixed RGB-D + segmentation + known CAD; world metres / wxyz",
+        "source_scene": "fixture/exported",
+        "source_scene_sha256": "89950f07ec9ea4503c0740a57c8ab1ec45c486909d5c34ea73c93a62ba44ae0f",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04993768118920311,
+            -0.012562320453709697,
+            -0.0030000000260770442
+          ],
+          [
+            0.05006232030091341,
+            0.01243767898749686,
+            0.0030000000260770442
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.4999958919197369,
+            -7.903280458362596e-06,
+            0.1329993450420743
+          ],
+          "quaternion_wxyz": [
+            0.8949299016600412,
+            -1.0723415826994474e-05,
+            -5.5237648469989205e-06,
+            0.44620675809454685
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4999412549797783,
+            9.362748479487832e-06,
+            0.2527382967799764
+          ],
+          "quaternion_wxyz": [
+            0.8949306010297577,
+            5.592450506477003e-05,
+            0.00011261542728106958,
+            0.4462053378554911
+          ]
+        },
+        "chosen_candidate": "edge_1_0_-1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening",
+          {
+            "candidate": "edge_1_0_1",
+            "reason": "IK did not converge: position=3.74386e-07 m, rotation=0.0189403 rad"
+          }
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11972472156996855,
+        "maximum_hold_speed_m_s": 0.0001913917659153088,
+        "maximum_relative_slip_m": 1.3130001984689588e-05,
+        "maximum_relative_rotation_rad": 1.7897425984981923e-05,
+        "max_ik_position_error_m": 0.00014981777101901532,
+        "max_ik_orientation_error_rad": 0.0003285565179024056,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied.",
+          "Single observation after settling; target assumed static during approach/descend. No visual tracking during lift.",
+          "Known metric mesh, calibrated fixed camera, simulator instance segmentation (not learned detection).",
+          "Rectangular exterior plate with visible broad face; reject insufficient pixels, clipping, extent or silhouette mismatch.",
+          "Symmetric objects yield multiple pose hypotheses. Raw and CAD-symmetry-aware errors reported separately.",
+          "Simulation contact/velocity guards remain; this is pose perception, not a fully sensor-only robot controller."
+        ],
+        "pose_evaluation": {
+          "position_error_m": 8.879276894715838e-06,
+          "rotation_error_deg": 0.0010082138780429769,
+          "symmetry_aware_rotation_error_deg": 0.0010082138780429769,
+          "verified_mesh_symmetry_count": 1,
+          "symmetry_method": "proper signed axis permutations verified against all CAD vertices",
+          "ground_truth": {
+            "position_m": [
+              0.4999999778573246,
+              -2.3815452261256513e-08,
+              0.13299959142271559
+            ],
+            "quaternion_wxyz": [
+              0.8949310279791244,
+              -1.853307935576376e-05,
+              -8.693409258444816e-06,
+              0.446204498790832
+            ]
+          },
+          "evaluation_only": true
+        },
+        "final_object_pose_source": "offline simulator evaluation only",
+        "pose_source": "vision",
+        "ground_truth_fallback": false,
+        "estimated_pose": {
+          "position_m": [
+            0.4999958919197369,
+            -7.903280458362596e-06,
+            0.1329993450420743
+          ],
+          "quaternion_wxyz": [
+            0.8949299016600412,
+            -1.0723415826994474e-05,
+            -5.5237648469989205e-06,
+            0.44620675809454685
+          ],
+          "source": "RGB-D + known CAD mesh",
+          "unit": "m",
+          "frame": "world",
+          "quaternion_order": "wxyz",
+          "diagnostics": {
+            "algorithm": "RANSAC plane + minimum-area exterior rectangle + CAD triangle silhouette registration",
+            "segmented_pixels": 3268,
+            "point_count": 3268,
+            "plane_point_count": 2728,
+            "relative_extent_error": [
+              0.0002170621075997702,
+              0.00018689790288809027
+            ],
+            "silhouette_iou": 0.9406113537117904,
+            "orientation_ambiguous": true,
+            "plausible_hypothesis_count": 2,
+            "ambiguity": "indistinguishable broad-face/yaw hypotheses retained; canonical representative returned",
+            "capture_time_s": 2.0000000000002514,
+            "position_uncertainty_scale_m": 0.0007961721704598257,
+            "visibility_requirement": "dominant broad face and near-complete rectangular exterior",
+            "pose_observation": "one RGB-D frame; no target body pose, qpos or ground-truth seed"
+          },
+          "hypotheses": [
+            {
+              "position_m": [
+                0.4999958919197369,
+                -7.903280458362596e-06,
+                0.1329993450420743
+              ],
+              "quaternion_wxyz": [
+                0.8949299016600412,
+                -1.0723415826994474e-05,
+                -5.5237648469989205e-06,
+                0.44620675809454685
+              ],
+              "silhouette_iou": 0.9406113537117904
+            },
+            {
+              "position_m": [
+                0.5000708996197542,
+                9.163943954691958e-05,
+                0.1329993450815903
+              ],
+              "quaternion_wxyz": [
+                5.5237648469989205e-06,
+                -0.44620675809454685,
+                0.8949299016600412,
+                -1.0723415826994474e-05
+              ],
+              "silhouette_iou": 0.9369369369369369
+            }
+          ]
+        },
+        "success_evaluation": "offline simulator trajectory, contact telemetry and unchanged hold checks"
+      }
+    }
+  ],
+  "known_fixture_failures": "Both new synthetic sizes exceed existing CAD2MuJoCo drop tail-speed threshold (1 mm/s) with 2.39/2.44 mm/s chatter; recorded false, not fixed or counted as passing drops. Existing CAD2MuJoCo tests remain 13/13.",
+  "logs": {
+    "tests.log": {
+      "path": "outputs/perception_dev/tests.log",
+      "sha256": "7e18f4769a0ceb993b320ba972b2f275696969de5187e88976c315f7a16e4e34"
+    },
+    "manipulation_regression.log": {
+      "path": "outputs/perception_dev/manipulation_regression.log",
+      "sha256": "561283006f6d0b10b03c20a38795c52045b23b474a6f5c3b265e313160592559"
+    },
+    "cad2mujoco_regression.log": {
+      "path": "outputs/perception_dev/cad2mujoco_regression.log",
+      "sha256": "61a2c22f74e74bfc494648894c78e4a4987bb5f97f6b8f4037b89143e43bd24c"
+    },
+    "cad_regression.log": {
+      "path": "outputs/perception_dev/cad_regression.log",
+      "sha256": "8dda81e43b02c765e67039376b8086bf66aecdd2ac29a0012e7adc0fcb021c4f"
+    },
+    "ball_regression.log": {
+      "path": "outputs/perception_dev/ball_regression.log",
+      "sha256": "02bdf503f26f854f81cd31903432272a0d2889cf470ef7b0c10bb68f0ccfb66a"
+    },
+    "b1_acceptance.log": {
+      "path": "outputs/perception_dev/b1_acceptance.log",
+      "sha256": "460d95d1fe1d5fab4261cf4b690df3b4d4774b5b82ddd98c56fb91faf94b47ff"
+    },
+    "cli.log": {
+      "path": "outputs/perception_dev/cli.log",
+      "sha256": "d4e51bb626a27c429cba1bd1bd699c3ca0030c752eaf81cfe0a3258c9d8ecc4e"
+    }
+  },
+  "example": {
+    "output": "outputs/perception/panda_cad",
+    "success": true,
+    "camera_scene_reloaded": true,
+    "offline_hold_replay_image": "outputs/perception/panda_cad/hold.png"
+  }
+}

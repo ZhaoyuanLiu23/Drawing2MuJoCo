@@ -1,0 +1,2 @@
+# Uses the existing simulation environment. No vision/RL/VLM dependencies.
+-r requirements-cad2mujoco.txt

@@ -1,0 +1,855 @@
+{
+  "verified_utc": "2026-09-25T02:29:58.310407+00:00",
+  "manipulation_version": "0.1.0",
+  "dependencies": {
+    "mujoco": "3.3.7",
+    "numpy": "2.0.2"
+  },
+  "tests": {
+    "manipulation": {
+      "passed": 13,
+      "skipped": 0,
+      "physical_positive_grasps": 5,
+      "physical_open_gripper_negative": 1
+    },
+    "cad2mujoco": {
+      "passed": 13,
+      "skipped": 0
+    },
+    "drawing2cad": {
+      "passed": 112,
+      "skipped": 0
+    },
+    "original_ball_grasp": {
+      "passed": 4,
+      "skipped": 0
+    },
+    "b1_acceptance": {
+      "passed": 6
+    }
+  },
+  "unchanged_existing_files": {
+    "count": 49,
+    "all_sha256_equal": true,
+    "sha256": {
+      "drawing_cad\\cad.py": "255d01b18565b03c8a5c4b40adac8085febdba55f24983cef47cf46a63315e47",
+      "drawing_cad\\cli.py": "5ccef529efb910730dad87cf2d2cf7fb0f4bc3eac50d51dfce309ef0a20b6191",
+      "drawing_cad\\dimensions.py": "5938a3cd67f1714e108a38e5e07bfac21735f739ea93b7750a8ed77fa4b85b2b",
+      "drawing_cad\\features.py": "f43753dc65d4538852fbe052c1d80a7b32cee40295630f693a74b18313af7b43",
+      "drawing_cad\\feature_callouts.py": "2a2796e6bd5a5a1dab5f7cdc0489704458d36961d2766cf0cb2865cc253b469e",
+      "drawing_cad\\geometry.py": "bb99418e48237499dce179ffd3b1fef9afc6fae6dddc833c1389e0be8d71e6ba",
+      "drawing_cad\\ingest.py": "0c23e47c5372a7cee71a1b9949d26c895322ac245916f65ece8be9c5594bcca8",
+      "drawing_cad\\leader_dimensions.py": "50fb38363410c8737909b0932a140306ad6716cc7d0d110843323c932ea55df7",
+      "drawing_cad\\ocr.py": "f5c7c9add2ecd9d5bfea57dfa162d22cf09f6224e6341ce8ff2eedc5e861e2ea",
+      "drawing_cad\\pattern_cad.py": "d85213c606e7f4874d00c11418b983b6efba10690c2def3face291f7e02f91d9",
+      "drawing_cad\\pattern_constraints.py": "e6d5e8989a982e31bc150567793ec3e02d2ea0e6c8c3943eca2f5f81862631e1",
+      "drawing_cad\\pattern_features.py": "1de8fe17915de3bd577108bf776c7adec5802dca9dc86d40027949b734ec1da4",
+      "drawing_cad\\pattern_geometry.py": "201f55bbb36b6af61217e578664cdca8f9ad743be35a4a67f55783e8a74a8e59",
+      "drawing_cad\\pipeline.py": "9568a4e10ad1c09d0e0bebd8730cfa4b430d8a3ff5ecb53e23316ca9d22a4abc",
+      "drawing_cad\\preprocess.py": "4e56d8e8241c6e446cd510dc05383775c5f11238404cc950cbe83ed97b32d46f",
+      "drawing_cad\\preview.py": "9824eb5f9832cea48bd3c68a03588bf7e0e13f3cefb2a13233e504da57e9e05f",
+      "drawing_cad\\profile_cad.py": "47764e36ca2feb8276e1f863744a8d893ce2b40c8ede812766e0e0a800c0891e",
+      "drawing_cad\\profile_features.py": "5d0705d9f7b18d9c87e37a7ceb614d7e34887999a8047b766f12f88ec02b84a3",
+      "drawing_cad\\profile_geometry.py": "84980835a84d5e0ede6e91aed5c7d15b3cf61d63c83e10a07e068735f8a61347",
+      "drawing_cad\\slot_inference.py": "20b7aa51f39f9a22424220827a7c8163e561ff52e54d3de02a0eb760786fbc34",
+      "drawing_cad\\types.py": "3be47745b39c0e9f8521b8f21f50f9e79cb59f1f1c7d1d124f6f3034ec8afacc",
+      "drawing_cad\\__init__.py": "4337ae6200e18f81aede63d64bf32140e6f0ebb555733a29b86b389056c5ebdf",
+      "cad_mujoco\\cli.py": "80e4fc01d6897d85d15b2f90534fd41846acf617bc2aec49db8d6ef2fa23d485",
+      "cad_mujoco\\mesh.py": "286c0c13907e8fdb9592edd8d2e28a01be8c41db7463c55add6fe291e697495e",
+      "cad_mujoco\\metadata.py": "ba38868cc222ff3259cbff3d330191cfc15893e5a6f4717b5fc074d9038a61e6",
+      "cad_mujoco\\mjcf.py": "df3aa2850ac42aa654b32f92dd0fffeff919bd2e94eb21593066ed9bb6ee8904",
+      "cad_mujoco\\pipeline.py": "d2f894b6dd47f12c78e84cae84b2f4b3f8974e884956cea50553215977eb3305",
+      "cad_mujoco\\validation.py": "8cf7a3eda6fb9a670b833f38680a8b6b4b580c7bd0e6e9a922d19fc75cc0c171",
+      "cad_mujoco\\__init__.py": "e9789285e1d662aa2f8b335a1695f48967124145309d4938d2331dd4a47f7dd3",
+      "cad2mujoco.py": "f498c736ba13da2cda0211405232c2e6bb507cde82ca8ea4b322cc441363a5a5",
+      "panda_grasp.py": "c991b8a18aa2fc03767c9514c04255a91f005c1ef086826b2356394fd208bb0c",
+      "pick_and_place.py": "615152a02bc180f10f1571d50adccd9c3805fee1d17a17186c9f63b1970efb4b",
+      "export_video.py": "05a6d1726f613cbf061e22ba5135d517f1b841eb95fca91b5bf29851ab9b9aba",
+      "models\\pick_and_place.xml": "5d85b30a12ec00462665975237349c59a5287aab26ef3b59cdc01abd99748051",
+      "tests\\drawing2cad\\conftest.py": "f8a916252b125faf5090732f3dbc569f6d3b600d2b9df77d27e0fa30d9899433",
+      "tests\\drawing2cad\\orthographic_feature_fixture.py": "223d229f9e201800f2a5933a74b37dcc9e2ead7e4ec1c81f54cc746d44e1b655",
+      "tests\\drawing2cad\\pattern_fixture.py": "445ac392275e390227e1cbe1b5e839baac4a012234fc350c2a439b4bda957935",
+      "tests\\drawing2cad\\profile_fixture.py": "6bbd2d0d03d833b9fd484390c93343fc2ab8678348cfc49cf1c31288be9e0e6e",
+      "tests\\drawing2cad\\slot_only_fixture.py": "b30ded6ea1386732b4878ee05b946c2ae3a109717b3f9699ce643344e58f8e20",
+      "tests\\drawing2cad\\test_dimensions.py": "f14b5c8911dc2ac68db72b1c206bf70ed02a1f3346886bf851ae09a72ac31751",
+      "tests\\drawing2cad\\test_generic_feature_extensions.py": "f178f8af5497918cc0661f42b0c09139dd627c29114fc5e84b991ee4fb7f9d69",
+      "tests\\drawing2cad\\test_pattern.py": "e326ce77099ccc6b05d5e9d5eac21380f8714cb8df212ed79725a5103ff4a3b2",
+      "tests\\drawing2cad\\test_pipeline.py": "cb2ec80cfbff7728e8956f5855c596499f9f78baf5a2e51de4a69bc1b1f6a3f3",
+      "tests\\drawing2cad\\test_profile.py": "1ee804b97c8e9cc70b8d23fc9e03519a2af5fc65d6211315d323904102b3895d",
+      "tests\\drawing2cad\\test_slot_only.py": "a88142035c649ccffcbde65b36e39dc39d09d311f4e8d91788c72f577d8cba13",
+      "tests\\drawing2cad\\variable_pattern_fixture.py": "00a518d1241d67d6139686e566f32396dde6d14c1cd9cb0946401876d452c9dd",
+      "tests\\cad2mujoco\\test_bridge.py": "f01194b56549dfc0a53f08ce583322f26a92602d204298ac992a2342082c63eb",
+      "tests\\test_panda_grasp.py": "9df8ff455ff74071ba471e7f30d9ff3f9ed6344d1bc560664600ae166e22ff3e",
+      "tests\\test_pick_and_place.py": "d966de93e196c5df84f719b37a0b6b25bf4d945ba3a9e50f366302266d789f6c"
+    }
+  },
+  "positive_metrics": {
+    "minimum_table_clearance_m": 0.11964697385513551,
+    "minimum_bilateral_contact_fraction": 1.0,
+    "maximum_hold_speed_m_s": 0.0001974679156920134,
+    "maximum_relative_slip_m": 1.4779542760497428e-05,
+    "maximum_relative_rotation_rad": 1.9099956181903578e-05
+  },
+  "physical_cases": [
+    {
+      "test": "test_manipulation.PhysicalTests.test_different_large_plate",
+      "case": "large",
+      "translation": [
+        0.025,
+        0.04,
+        0
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "MuJoCo ground-truth xpos/xquat; metres, world frame, quaternion wxyz",
+        "source_scene": "fixture/large",
+        "source_scene_sha256": "cd74316a1ba17b683691d2cd8f8d77dd49a556578a249f4cc1e8fba8d2f90e61",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.06400000303983713,
+            -0.027000000700354684,
+            -0.0060000000521540885
+          ],
+          [
+            0.06400000303983713,
+            0.027000000700354684,
+            0.0060000000521540885
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.5249999392393008,
+            0.03999683810681478,
+            0.13599955455222518
+          ],
+          "quaternion_wxyz": [
+            0.7071088193594788,
+            7.161001033694587e-06,
+            7.0467736367910344e-06,
+            0.7071047429363679
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.524895139826361,
+            0.039988604983921705,
+            0.25566339970317986
+          ],
+          "quaternion_wxyz": [
+            0.7071080494353249,
+            0.00015163633419161746,
+            0.00017180944393901997,
+            0.7071054758037928
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11964697385513551,
+        "maximum_hold_speed_m_s": 0.0001871894011564976,
+        "maximum_relative_slip_m": 1.4779542760497428e-05,
+        "maximum_relative_rotation_rad": 3.2620304668222683e-06,
+        "max_ik_position_error_m": 0.00014973690536871056,
+        "max_ik_orientation_error_rad": 0.0014332479863085148,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied."
+        ]
+      }
+    },
+    {
+      "test": "test_manipulation.PhysicalTests.test_different_small_plate",
+      "case": "small",
+      "translation": [
+        -0.025,
+        -0.055,
+        0
+      ],
+      "yaw_rad": -0.4886921905584123,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "MuJoCo ground-truth xpos/xquat; metres, world frame, quaternion wxyz",
+        "source_scene": "fixture/small",
+        "source_scene_sha256": "dda59e0309973fa08aebcf7547e27d04627faf01bc0cd5867815f1e497f280b2",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04199999943375604,
+            -0.01799999922513969,
+            -0.004999999888241311
+          ],
+          [
+            0.04199999943375604,
+            0.01799999922513969,
+            0.004999999888241311
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.47499980214499493,
+            -0.05500142154134878,
+            0.13500181586990867
+          ],
+          "quaternion_wxyz": [
+            0.9702973053617886,
+            4.151428824816536e-05,
+            2.7389356546141164e-05,
+            -0.24191555703186948
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4749603957181255,
+            -0.05500459935774126,
+            0.2547617518638407
+          ],
+          "quaternion_wxyz": [
+            0.9702978748734037,
+            1.563228265672183e-05,
+            0.0001320169999020984,
+            -0.2419132413558632
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11974553089723419,
+        "maximum_hold_speed_m_s": 0.00019439768653512935,
+        "maximum_relative_slip_m": 1.2632613494961613e-05,
+        "maximum_relative_rotation_rad": 1.4166268333116987e-05,
+        "max_ik_position_error_m": 0.00014979610217451277,
+        "max_ik_orientation_error_rad": 0.000543570723394903,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied."
+        ]
+      }
+    },
+    {
+      "test": "test_manipulation.PhysicalTests.test_existing_exported_cad_grasp_lift_and_hold",
+      "case": "exported_cad",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "yaw_rad": 0.0,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "MuJoCo ground-truth xpos/xquat; metres, world frame, quaternion wxyz",
+        "source_scene": "fixture/exported_cad",
+        "source_scene_sha256": "89950f07ec9ea4503c0740a57c8ab1ec45c486909d5c34ea73c93a62ba44ae0f",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04993768118920311,
+            -0.012562320453709697,
+            -0.0030000000260770442
+          ],
+          [
+            0.05006232030091341,
+            0.01243767898749686,
+            0.0030000000260770442
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.5000038578098871,
+            -9.687020531410345e-08,
+            0.13299956211359817
+          ],
+          "quaternion_wxyz": [
+            0.9999999998453997,
+            -1.7141715042391153e-05,
+            5.711570554303383e-07,
+            3.8777373512137985e-06
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4999594640346135,
+            -5.593579457255427e-07,
+            0.2527384179784322
+          ],
+          "quaternion_wxyz": [
+            0.999999991721486,
+            -1.9289806381605357e-05,
+            0.00012715552927542066,
+            4.0501452245267945e-06
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11972191751529795,
+        "maximum_hold_speed_m_s": 0.0001914428266244582,
+        "maximum_relative_slip_m": 1.3130251426233292e-05,
+        "maximum_relative_rotation_rad": 1.8408431568754045e-05,
+        "max_ik_position_error_m": 0.00014981026734797783,
+        "max_ik_orientation_error_rad": 0.0007993924467235302,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied."
+        ]
+      }
+    },
+    {
+      "test": "test_manipulation.PhysicalTests.test_open_gripper_is_not_a_success",
+      "case": "small",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "yaw_rad": 0.0,
+      "result": {
+        "success": false,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": false,
+          "lifted_clear_of_table": false,
+          "no_table_contact_during_hold": false,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": {
+          "stage": "evaluation",
+          "reason": "grasp_checks_failed",
+          "failed_checks": [
+            "sustained_bilateral_contact",
+            "lifted_clear_of_table",
+            "no_table_contact_during_hold"
+          ]
+        },
+        "observation_source": "MuJoCo ground-truth xpos/xquat; metres, world frame, quaternion wxyz",
+        "source_scene": "fixture/small",
+        "source_scene_sha256": "dda59e0309973fa08aebcf7547e27d04627faf01bc0cd5867815f1e497f280b2",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04199999943375604,
+            -0.01799999922513969,
+            -0.004999999888241311
+          ],
+          [
+            0.04199999943375604,
+            0.01799999922513969,
+            0.004999999888241311
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.5000047296772645,
+            6.958186176807378e-07,
+            0.13499955079932985
+          ],
+          "quaternion_wxyz": [
+            0.9999999999872147,
+            -4.831431938838569e-06,
+            -2.23563777521757e-07,
+            1.4758169052154877e-06
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.5000047296648638,
+            7.0069989311358e-07,
+            0.13499955041054876
+          ],
+          "quaternion_wxyz": [
+            0.9999999999847656,
+            -5.314008149303263e-06,
+            -2.2603491441053263e-07,
+            1.475697881787708e-06
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": false,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 0.0,
+        "minimum_hold_table_clearance_m": -6.617902476024895e-07,
+        "maximum_hold_speed_m_s": 2.536196249168475e-06,
+        "maximum_relative_slip_m": 1.9084502577714534e-05,
+        "maximum_relative_rotation_rad": 1.5545716170971415e-05,
+        "max_ik_position_error_m": 0.0001498165040272334,
+        "max_ik_orientation_error_rad": 0.00079938999165405,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied."
+        ]
+      }
+    },
+    {
+      "test": "test_manipulation.PhysicalTests.test_translated_target_grasp",
+      "case": "exported_cad",
+      "translation": [
+        -0.065,
+        0.085,
+        0
+      ],
+      "yaw_rad": 0.0,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "MuJoCo ground-truth xpos/xquat; metres, world frame, quaternion wxyz",
+        "source_scene": "fixture/exported_cad",
+        "source_scene_sha256": "89950f07ec9ea4503c0740a57c8ab1ec45c486909d5c34ea73c93a62ba44ae0f",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04993768118920311,
+            -0.012562320453709697,
+            -0.0030000000260770442
+          ],
+          [
+            0.05006232030091341,
+            0.01243767898749686,
+            0.0030000000260770442
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.43499992177327085,
+            0.08500281842448887,
+            0.1329996703626733
+          ],
+          "quaternion_wxyz": [
+            0.999999999861998,
+            -1.4622979834318142e-05,
+            -1.8968249629041237e-06,
+            7.653467142378234e-06
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4349561719571039,
+            0.08499004778907376,
+            0.2527496182813114
+          ],
+          "quaternion_wxyz": [
+            0.9999999923519531,
+            -4.038623063971728e-05,
+            0.0001166072004852584,
+            8.234525027660573e-06
+          ]
+        },
+        "chosen_candidate": "edge_1_0_1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening"
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11973293937490215,
+        "maximum_hold_speed_m_s": 0.0001974679156920134,
+        "maximum_relative_slip_m": 1.3131577842398776e-05,
+        "maximum_relative_rotation_rad": 1.9099956181903578e-05,
+        "max_ik_position_error_m": 0.00014978346274111063,
+        "max_ik_orientation_error_rad": 0.0007166587486344165,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied."
+        ]
+      }
+    },
+    {
+      "test": "test_manipulation.PhysicalTests.test_z_rotated_target_grasp",
+      "case": "exported_cad",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "yaw_rad": 0.9948376736367679,
+      "result": {
+        "success": true,
+        "checks": {
+          "completed": true,
+          "sustained_bilateral_contact": true,
+          "lifted_clear_of_table": true,
+          "no_table_contact_during_hold": true,
+          "stable_linear_speed": true,
+          "stable_relative_position": true,
+          "stable_relative_orientation": true
+        },
+        "failure": null,
+        "observation_source": "MuJoCo ground-truth xpos/xquat; metres, world frame, quaternion wxyz",
+        "source_scene": "fixture/exported_cad",
+        "source_scene_sha256": "89950f07ec9ea4503c0740a57c8ab1ec45c486909d5c34ea73c93a62ba44ae0f",
+        "config": {
+          "control_dt": 0.01,
+          "settle_seconds": 2.0,
+          "approach_seconds": 2.5,
+          "descend_seconds": 2.0,
+          "close_seconds": 1.0,
+          "lift_seconds": 2.5,
+          "hold_seconds": 2.0,
+          "lift_distance_m": 0.12,
+          "pregrasp_clearance_m": 0.1,
+          "gripper_stiffness_N_m": 1000.0,
+          "minimum_lift_m": 0.06,
+          "minimum_bilateral_fraction": 0.95,
+          "maximum_hold_speed_m_s": 0.015,
+          "maximum_relative_slip_m": 0.003,
+          "maximum_relative_rotation_rad": 0.05
+        },
+        "robot_calibration": {
+          "tcp_hand_m": [
+            0,
+            0,
+            0.11225800114045055
+          ],
+          "pad_tip_recess_m": 0.0008580011404506482,
+          "pad_half_width_m": 0.008499999999999995,
+          "open_gap_m": 0.08,
+          "source": "compiled Panda collision geometry and finger joint limits",
+          "gripper_stiffness_N_m": 1000.0,
+          "gripper_damping_N_s_m": 20.0,
+          "original_gripper_stiffness_N_m": 100.0,
+          "gripper_force_range_N": [
+            -100.0,
+            100.0
+          ],
+          "robot_compensation": "qfrc_bias feedforward only on seven arm DOFs"
+        },
+        "object_local_bounds_m": [
+          [
+            -0.04993768118920311,
+            -0.012562320453709697,
+            -0.0030000000260770442
+          ],
+          [
+            0.05006232030091341,
+            0.01243767898749686,
+            0.0030000000260770442
+          ]
+        ],
+        "observed_grasp_start": {
+          "position_m": [
+            0.49999997113311473,
+            -2.939251665751331e-08,
+            0.13299957871375284
+          ],
+          "quaternion_wxyz": [
+            0.878811660414304,
+            -1.797411155004194e-05,
+            -9.71552269228305e-06,
+            0.47716880147636914
+          ]
+        },
+        "final_object_pose": {
+          "position_m": [
+            0.4999350905794508,
+            1.2475141451848308e-05,
+            0.2527383695857591
+          ],
+          "quaternion_wxyz": [
+            0.8788109872388683,
+            5.6693401277335905e-05,
+            0.00010737377788759355,
+            0.47717002626419924
+          ]
+        },
+        "chosen_candidate": "edge_1_0_-1",
+        "candidate_count": 6,
+        "rejected_candidates": [
+          "axis_0: exceeds measured gripper opening",
+          {
+            "candidate": "edge_1_0_1",
+            "reason": "IK did not converge: position=1.41625e-06 m, rotation=0.0597789 rad"
+          }
+        ],
+        "grip_enabled": true,
+        "simulated_seconds": 13.049999999992261,
+        "hold_duration_s": 1.9899999999953621,
+        "hold_bilateral_fraction": 1.0,
+        "minimum_hold_table_clearance_m": 0.11972540468393505,
+        "maximum_hold_speed_m_s": 0.00019140890997655977,
+        "maximum_relative_slip_m": 1.3129699679090884e-05,
+        "maximum_relative_rotation_rad": 1.416799202376543e-05,
+        "max_ik_position_error_m": 0.0001498339733564905,
+        "max_ik_orientation_error_rad": 0.0002930290338916754,
+        "assumptions": [
+          "Nearly horizontal rectangular plate with supported opposed exterior faces; top-down pinch only.",
+          "Panda Menagerie named joints, tendon gripper and calibrated original collision pads.",
+          "Current CAD2MuJoCo convex-hull collision; openings are not grasp candidates.",
+          "Kinematic approach sampling is not a global collision-free motion planner.",
+          "Object poses are never overwritten and no object force, weld or gravity compensation is applied."
+        ]
+      }
+    }
+  ],
+  "tested_rejections": [
+    "oversized opening",
+    "plate too thin",
+    "tilted plate",
+    "missing opposed mesh surface support",
+    "unreachable IK",
+    "missing scene input",
+    "open gripper never lifts object"
+  ],
+  "limits": [
+    "Simulation only; Panda pose is ground truth.",
+    "Nearly horizontal flat plates with local-axis exterior planar faces.",
+    "Single convex hull contacts; holes/slots not available for internal grasping.",
+    "Panda gripper servo settings changed in memory only; force limits/geometry retained.",
+    "No global motion planning, vision, RL, VLM, release, assembly or automatic retry."
+  ]
+}
