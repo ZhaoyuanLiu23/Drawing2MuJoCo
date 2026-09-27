@@ -68,6 +68,10 @@ flowchart LR
 - **技术栈**：前端 Next.js（pnpm），后端 FastAPI + 独立虚拟环境；前端经 Next.js 同步转发访问 `/api/*`，不开放 CORS；只绑定 127.0.0.1。
 - **边界**：本地单进程同步服务，无云调度、无并发队列、无登录；HTTP 同步等待最长 600 秒。
 
+完整成功状态：仿真执行录像内嵌播放（可暂停/拖动/下载），任务成功以释放后视觉复核判定，本次执行轨迹与结果 JSON 均可保存。
+
+![Web 工作台仿真完成：录像回放与任务成功状态](docs/images/web-workbench-simulation.png)
+
 快速启动（两个终端）：
 
 ```powershell
